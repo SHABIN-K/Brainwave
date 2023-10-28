@@ -1,4 +1,5 @@
 "use client";
+
 import styled from "@emotion/styled";
 
 const LoadingContainer = styled.div`
@@ -111,7 +112,7 @@ const LoadingContainer = styled.div`
   }
 `;
 
-const Loading = () => {
+const Loader = () => {
   return (
     <LoadingContainer>
       <div className="three-body">
@@ -123,4 +124,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default Loader;
