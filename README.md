@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Commit message types
+feat: (adds valuable new features or improvements that directly benefit and engage users.)
 
-## Getting Started
+E.g. "feat(column): Added new feature.""
+``````
+fix: ( resolve user-related issues, improving the software's reliability and providing a smoother user experience.)
 
-First, run the development server:
+E.g. "fix(case): Fixed case sensitivity issue in search functionality for accurate results."
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+docs: (making changes or updates to the documentation for better clarity and understanding.)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+E.g. "docs(readme): Updated README file with installation instructions and usage examples."
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+style: ( focus on improving code appearance, such as formatting and fixing missing semicolons, without affecting functionality.)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+E.g. "style(format): Corrected indentation and added missing semicolons for consistent code style."
 
-## Learn More
+refactor: (modifying the production code, such as renaming variables, to improve its structure and maintainability.)
 
-To learn more about Next.js, take a look at the following resources:
+E.g. "refactor(variables): Renamed variables for improved code clarity and maintainability."
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+test: (adding tests that were missing and improving existing tests, without changing the production code.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+E.g. "test(login): Added tests for user login functionality and refactored existing login tests."
 
-## Deploy on Vercel
+chore: (updating build tasks and other non-production code aspects, without changing the actual software.)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+E.g. "chore(grunt): Updated Grunt tasks for better task automation and build process efficiency."``````
