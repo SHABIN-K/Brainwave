@@ -8,7 +8,7 @@ const LoadingContainer = styled.div`
   height: 100vh;
 
   .three-body {
-    --uib-size: 85px;
+    --uib-size: 95px;
     --uib-speed: 0.8s;
     --uib-color: #000;
     position: relative;
