@@ -1,11 +1,9 @@
+'use client'
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { createTheme,ThemeProvider } from "@mui/material/styles";
-
-
-
 
 
 export default function ColorTabs() {
@@ -14,6 +12,7 @@ export default function ColorTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  
   const customTheme = createTheme({
     palette: {
       primary: {
