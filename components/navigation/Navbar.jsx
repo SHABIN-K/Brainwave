@@ -1,4 +1,4 @@
-import TabPanel from "../ui/Tabs";
+import TabsPanel from "../ui/Tabs";
 
 const Navbar = () => {
   return (
@@ -8,7 +8,7 @@ const Navbar = () => {
           <h1 className="text-black">TOSS</h1>
         </a>
         <div className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 md:flex   lg:items-center ">
-          <TabPanel />
+          <TabsPanel />
         </div>
         <div className="hidden sm:inline-block">
           <a
