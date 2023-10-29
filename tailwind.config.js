@@ -10,13 +10,11 @@ module.exports = {
       screens: {
         xs: "400px",
       },
-      color: {
-        mainColor: "#000",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        main: "#ffffff",
+        primary: "#000000",
+        secondary: "#6c6867",
+      
       },
     },
   },
