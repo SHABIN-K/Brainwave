@@ -1,32 +1,17 @@
-'use client'
+"use client";
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { createTheme,ThemeProvider } from "@mui/material/styles";
 
-
-export default function ColorTabs() {
+export default function TabPanel() {
   const [value, setValue] = React.useState("one");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  
-  const customTheme = createTheme({
-    palette: {
-      primary: {
-        main: "#000000", 
-      },
-      secondary: {
-        main: "#bcbcbc", 
-      },
-    },
-  });
-  
 
   return (
-    <ThemeProvider theme={customTheme}>
     <Box sx={{ width: "100%" }}>
       <Tabs
         value={value}
@@ -40,6 +25,5 @@ export default function ColorTabs() {
         <Tab value="three" label="Favourites" />
       </Tabs>
     </Box>
-    </ThemeProvider>
   );
 }

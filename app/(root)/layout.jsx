@@ -1,6 +1,7 @@
 import { Toaster } from "sonner";
 
 import "../globals.css";
+import MuiProvider from "@/components/provider/MuiProvider";
 
 export const metadata = {
   title: "Toss",
@@ -11,8 +12,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-[#fff] min-h-screen">
-        <Toaster richColors closeButton position="top-center" />
-        {children}
+        <MuiProvider>
+          <Toaster richColors closeButton position="top-center" />
+          {children}
+        </MuiProvider>
       </body>
     </html>
   );
