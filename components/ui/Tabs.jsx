@@ -5,12 +5,34 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import useTabStore from "@/libs/stores/useTab";
 
+const commonTabStyle = {
+  fontWeight: "700",
+  textTransform: "capitalize",
+  fontSize: "16px",
+};
+
+const tabItems = {
+  1: {
+    value: "one",
+    label: "Home",
+  },
+  2: {
+    value: "two",
+    label: "Best Matches",
+  },
+  3: {
+    value: "three",
+    label: "Favourites",
+  },
+};
+
 export default function TabsPanel() {
   const { setState, tabValue } = useTabStore();
 
   const handleChange = (event, newValue) => {
     setState({ tabValue: newValue });
   };
+
   return (
     <Box sx={{ width: "100%" }}>
       <Tabs
@@ -20,9 +42,17 @@ export default function TabsPanel() {
         indicatorColor="secondary"
         aria-label="secondary tabs example"
       >
-        <Tab value="one" label="Home" sx={{ fontWeight: "bold" }} />
-        <Tab value="two" label="Best Matches" sx={{ fontWeight: "bold" }} />
-        <Tab value="three" label="Favourites" sx={{ fontWeight: "bold" }} />
+        {Object.keys(tabItems).map((key) => {
+          const item = tabItems[key];
+          return (
+            <Tab
+              key={item.value}
+              value={item.value}
+              label={item.label}
+              sx={commonTabStyle}
+            />
+          );
+        })}
       </Tabs>
     </Box>
   );
