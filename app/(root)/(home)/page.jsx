@@ -5,7 +5,7 @@ import { TabContext, TabPanel } from "@mui/lab";
 
 export default function Home() {
   const tabValue = useTabStore((state) => state.tabValue);
-  
+
   return (
     <div>
       <TabContext value={tabValue}>

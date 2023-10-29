@@ -1,15 +1,18 @@
-import TabsPanel from "../ui/Tabs";
-import { Merienda } from 'next/font/google'
+import { Merienda } from "next/font/google";
 
-  const merienda = Merienda({
-    subsets: ['latin'],
-    weight: ['600'],
-    display : 'auto'
-  })
+import Hamburger from "../ui/Hamburger";
+import TabsPanel from "../ui/Tabs";
+
+const merienda = Merienda({
+  subsets: ["latin"],
+  weight: ["600"],
+  display: "auto",
+});
+
 const Navbar = () => {
   return (
     <>
-      <nav className="relative hidden sm:flex px-4 py-2 justify-between items-center bg-white">
+      <nav className="relative hidden sm:flex px-4 py-2 justify-between items-center bg-main">
         <a className="text-3xl font-bold leading-none" href="#">
           <h1 className={` ${merienda.className} text-black`}>TOSS</h1>
         </a>
@@ -17,35 +20,23 @@ const Navbar = () => {
           <TabsPanel />
         </div>
         <div className="hidden sm:inline-block">
-          <button
-            className="md:ml-auto md:mr-3 py-2 px-6 bg-white hover:bg-gray-300 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
-            
-          >
+          <button className="md:ml-auto md:mr-3 py-2 px-6 bg-main hover:bg-gray-300 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">
             Sign In
           </button>
-          <button
-            className=" py-2 px-6 bg-black hover:bg-gray-800 text-sm text-white font-bold rounded-xl transition duration-200"
-            
-          >
+          <button className=" py-2 px-6 bg-black hover:bg-gray-800 text-sm text-white font-bold rounded-xl transition duration-200">
             Sign up
           </button>
         </div>
       </nav>
 
-      <nav className="relative flex sm:hidden px-4 py-2 justify-between items-center bg-white">
-        <a className="text-3xl font-bold leading-none" href="#">
-        <h1 className={` ${merienda.className} text-black`}>TOSS</h1>
-        </a>
-        <div className="flex sm:hidden">
-          <button className="navbar-burger flex items-center text-black p-3">
-            <svg
-              className="block h-4 w-4 fill-current"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Mobile menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
+      <nav className="relative flex sm:hidden p-2 justify-between items-center bg-white">
+        <div className="flex flex-col">
+          <p className="">Welcome!</p>
+          <p className="">Jon doe</p>
+        </div>
+        <div className="">
+          <button className="flex items-center text-primary">
+            <Hamburger />
           </button>
         </div>
       </nav>
