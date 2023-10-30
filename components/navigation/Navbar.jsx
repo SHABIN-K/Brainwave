@@ -16,7 +16,7 @@ const Navbar = () => {
         <a className="text-3xl font-bold leading-none" href="#">
           <h1 className={` ${merienda.className} text-black`}>TOSS</h1>
         </a>
-        <div className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 md:flex   lg:items-center ">
+        <div className="hidden md:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center ">
           <TabsPanel />
         </div>
         <div className="hidden sm:inline-block">
@@ -28,6 +28,8 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      
+      {/* Mobile view */}
 
       <nav className="relative flex sm:hidden p-2 justify-between items-center bg-white">
         <div className="flex flex-col">
