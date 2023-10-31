@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "beautify": "prettier --write --ignore-unknown"
+    "beautify": "prettier --write --ignore-unknown",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -22,6 +23,8 @@
     "zustand": "^4.4.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
@@ -35,4 +38,3 @@
     "**/*": "prettier --write --ignore-unknown"
   }
 }
-
