@@ -1,7 +1,10 @@
 import { Toaster } from "sonner";
+import { Inter } from "next/font/google";
 
 import "../globals.css";
 import MuiProvider from "@/components/provider/MuiProvider";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Toss",
@@ -11,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#fff] min-h-screen">
+      <body className={inter.className}>
         <MuiProvider>
           <Toaster richColors closeButton position="top-center" />
           {children}

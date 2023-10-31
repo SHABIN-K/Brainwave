@@ -39,8 +39,8 @@ export default function TabsPanel() {
         value={tabValue}
         onChange={handleChange}
         textColor="primary"
-        indicatorColor="secondary"
-        aria-label="secondary tabs example"
+        indicatorColor="primary"
+        aria-label="navbar tabs "
       >
         {Object.keys(tabItems).map((key) => {
           const item = tabItems[key];
