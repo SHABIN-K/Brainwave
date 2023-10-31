@@ -30,7 +30,7 @@ const Navbar = () => {
       
       {/* Mobile view */}
 
-      <nav className="relative flex sm:hidden p-2 justify-between items-center bg-textColor-primary">
+      <nav className="relative flex sm:hidden p-2 justify-between items-center bg-bgColor-main">
         <div className="flex flex-col">
           <p className="">Welcome!</p>
           <p className="">Jon doe</p>
