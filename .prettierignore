@@ -1,0 +1,12 @@
+# Ignore artifacts:
+
+build
+**/node_modules
+**/.git
+**/.next
+package.json
+package-lock.json
+jsconfig.json
+next.config.json
+postcss.config.json
+
