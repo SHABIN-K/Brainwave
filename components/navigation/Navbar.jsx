@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { Merienda } from "next/font/google";
+import { useState } from 'react';
+import Link from 'next/link';
+import { Merienda } from 'next/font/google';
 
-import Hamburger from "../ui/Hamburger";
-import TabsPanel from "../ui/Tabs";
+import Hamburger from '../ui/Hamburger';
+import TabsPanel from '../ui/Tabs';
 
 const merienda = Merienda({
-  subsets: ["latin"],
-  weight: ["600"],
-  display: "swap",
+  subsets: ['latin'],
+  weight: ['600'],
+  display: 'swap',
 });
 
 const Navbar = () => {
@@ -48,9 +48,7 @@ const Navbar = () => {
           </div>
         ) : (
           <Link className="text-3xl font-bold leading-none" href="/">
-            <h1 className={` ${merienda.className} text-textColor-main`}>
-              TOSS
-            </h1>
+            <h1 className={` ${merienda.className} text-textColor-main`}>TOSS</h1>
           </Link>
         )}
         <button className="flex items-center">
