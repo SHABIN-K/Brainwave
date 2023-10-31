@@ -19,10 +19,10 @@ const Navbar = () => {
           <TabsPanel />
         </div>
         <div className="hidden sm:inline-block">
-          <button className="md:ml-auto md:mr-3 py-2 px-6 bg-bgColor-main hover:bg-gray-300 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">
+          <button className="md:ml-auto md:mr-3 py-2.5 px-6 bg-bgColor-main hover:bg-gray-300 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">
             Sign In
           </button>
-          <button className=" py-2 px-6 bg-bgColor-primary hover:bg-gray-700 text-sm text-textColor-primary font-bold rounded-xl transition duration-200">
+          <button className=" py-2.5 px-6 bg-bgColor-primary hover:bg-gray-700 text-sm text-textColor-primary font-bold rounded-xl transition duration-200">
             Sign up
           </button>
         </div>
