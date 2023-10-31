@@ -5,8 +5,8 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import useTabStore from "@/libs/stores/useTab";
 
-const commonTabStyle = {
-  fontWeight: "700",
+const tabStyle = {
+  fontWeight: "500",
   textTransform: "capitalize",
   fontSize: "16px",
 };
@@ -49,7 +49,7 @@ export default function TabsPanel() {
               key={item.value}
               value={item.value}
               label={item.label}
-              sx={commonTabStyle}
+              sx={tabStyle}
             />
           );
         })}

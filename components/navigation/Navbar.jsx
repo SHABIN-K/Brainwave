@@ -36,7 +36,7 @@ const Navbar = () => {
           <p className="">Jon doe</p>
         </div>
         <div className="">
-          <button className="flex items-center text-primary">
+          <button className="flex items-center text-textColor-primary">
             <Hamburger />
           </button>
         </div>
