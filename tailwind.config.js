@@ -11,10 +11,16 @@ module.exports = {
         xs: "400px",
       },
       colors: {
-        main: "#ffffff",
-        primary: "#000000",
-        secondary: "#6c6867",
-      
+        bgColor: {
+          main: "#ffffff",
+          primary:"#000000",
+          gray:"#6c6867",
+        },
+        textColor: {
+          main: "#000000",
+          primary: "#ffffff",
+          secondary: "#6c6867",
+        },
       },
     },
   },
