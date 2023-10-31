@@ -24,6 +24,8 @@
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
+    "@commitlint/cz-commitlint": "^18.2.0",
+    "@commitlint/prompt-cli": "^18.2.0",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
