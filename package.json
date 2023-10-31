@@ -8,8 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "beautify": "prettier --write --ignore-unknown",
-    "commitlint": "commitlint --edit",
     "commit": "git-cz"
   },
   "dependencies": {
@@ -33,15 +31,15 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.0.2",
     "postcss": "^8",
-    "prettier": "^3.0.3",
+    "prettier": "3.0.3",
     "tailwindcss": "^3"
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
   },
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
     }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

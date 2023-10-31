@@ -1,12 +1,12 @@
 # Ignore artifacts:
-
 build
-**/node_modules
+coverage
+
+
 **/.git
+**/.svn
+**/.hg
+**/node_modules
 **/.next
-package.json
-package-lock.json
-jsconfig.json
-next.config.json
-postcss.config.json
+**/.husky
 
