@@ -18,8 +18,12 @@ const Navbar = () => {
   return (
     <>
       <nav className="relative hidden sm:flex px-4 py-2 justify-between items-center bg-bgColor-main">
-        <Link className="text-3xl font-bold leading-none" href="/">
-          <h1 className={`${merienda.className}text-textColor-main`}>TOSS</h1>
+        <Link href="/">
+          <h1
+            className={`${merienda.className} text-textColor-main text-3xl font-bold leading-none`}
+          >
+            TOSS
+          </h1>
         </Link>
         <div className="hidden md:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center ">
           <TabsPanel />
@@ -47,8 +51,12 @@ const Navbar = () => {
             </p>
           </div>
         ) : (
-          <Link className="text-3xl font-bold leading-none" href="/">
-            <h1 className={` ${merienda.className} text-textColor-main`}>TOSS</h1>
+          <Link href="/">
+            <h1
+              className={`${merienda.className} text-textColor-main text-3xl font-bold leading-none`}
+            >
+              TOSS
+            </h1>
           </Link>
         )}
         <button className="flex items-center">
