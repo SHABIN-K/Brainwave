@@ -27,19 +27,22 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      
+
       {/* Mobile view */}
 
-      <nav className="relative flex sm:hidden p-2 justify-between items-center bg-bgColor-main">
+      <nav className="relative flex sm:hidden p-1 justify-between items-center bg-bgColor-main">
         <div className="flex flex-col">
-          <p className="">Welcome!</p>
-          <p className="">Jon doe</p>
+          <p className="font-medium text-[16px] leading-[135%] tracking-[0.3px] text-left text-gray-800">
+            Welcome!
+          </p>
+          <p className="font-bold text-[22px] leading-[140%] tracking-[0.3px] w-auto text-left text-textColor-main">
+            Jon doe
+          </p>
         </div>
-        <div className="">
-          <button className="flex items-center text-textColor-primary">
-            <Hamburger />
-          </button>
-        </div>
+
+        <button className="flex items-center">
+          <Hamburger />
+        </button>
       </nav>
     </>
   );

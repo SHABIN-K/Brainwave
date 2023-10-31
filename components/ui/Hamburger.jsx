@@ -14,7 +14,7 @@ const HamburgerContainer = styled.div`
   }
 
   svg {
-    height: 3em;
+    height: 3.2em;
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
