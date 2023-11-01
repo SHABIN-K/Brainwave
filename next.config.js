@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ["i.ibb.co"],
-    },
-  };
-  
-  module.exports = nextConfig;
-  
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'i.ibb.co',
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;

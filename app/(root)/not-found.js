@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function NotFound() {
   return (
@@ -8,13 +8,12 @@ export default function NotFound() {
       <div className="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">
         <div className="relative">
           <div className="absolute">
-            <div className="">
+            <div>
               <h1 className="my-2 text-gray-800 font-bold text-2xl sm:text-4xl">
                 Looks like you've found the doorway to the great nothing
               </h1>
               <p className="my-2 text-gray-800">
-                Sorry about that! Please visit our hompage to get where you need
-                to go.
+                Sorry about that! Please visit our hompage to get where you need to go.
               </p>
               <Link href="/">
                 <button className="sm:w-full lg:w-auto my-2 border rounded-lg md py-4 px-8 text-center bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">
