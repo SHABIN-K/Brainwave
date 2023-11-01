@@ -1,5 +1,6 @@
-``````
 Commit message types
+
+``````
 feat: (adds valuable new features or improvements that directly benefit and engage users.)
 
 E.g. "feat(column): Added new feature.""
