@@ -6,6 +6,7 @@ import { Merienda } from 'next/font/google';
 
 import Hamburger from '../ui/Hamburger';
 import TabsPanel from '../ui/Tabs';
+import Sidebar from './Sidebar';
 
 const merienda = Merienda({
   subsets: ['latin'],
@@ -14,9 +15,11 @@ const merienda = Merienda({
 });
 
 const Navbar = () => {
-  const [isLogged, setisLogged] = useState(false);
+  const [isLogged, setisLogged] = useState(true);
   return (
     <>
+      {/*medium screen view */}
+
       <nav className="relative hidden sm:flex px-4 py-2 justify-between items-center bg-bgColor-main">
         <Link href="/">
           <h1
@@ -40,7 +43,7 @@ const Navbar = () => {
 
       {/* Mobile view */}
 
-      <nav className="relative flex sm:hidden p-1 justify-between items-center bg-bgColor-main">
+      <nav className="flex-between relative sm:hidden p-1 bg-bgColor-main">
         {isLogged ? (
           <div className="flex flex-col">
             <p className="font-medium text-[16px] leading-[135%] tracking-[0.3px] text-left text-gray-800">
@@ -59,10 +62,16 @@ const Navbar = () => {
             </h1>
           </Link>
         )}
-        <button className="flex items-center">
+        <button type="button" className="flex items-center">
           <Hamburger />
         </button>
       </nav>
+
+      {/* Sidebar view*/}
+
+      <aside className="">
+        <Sidebar />
+      </aside>
     </>
   );
 };
