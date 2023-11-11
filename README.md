@@ -7,8 +7,9 @@ Commit message types
 This means that PATCHes are bug fixes and MINORs add new features but neither of them break what worked before. <br/> Finally, MAJORs add changes that won’t work with earlier versions.
 
 <hr/>
+<hr/>
 
-``````
+```````
 feat: (adds valuable new features or improvements that directly benefit and engage users.)
 
 E.g. "feat(column): Added new feature.""
@@ -37,3 +38,4 @@ chore: (updating build tasks and other non-production code aspects, without chan
 
 E.g. "chore(grunt): Updated Grunt tasks for better task automation and build process efficiency."``````
 
+```````
