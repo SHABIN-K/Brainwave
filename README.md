@@ -6,16 +6,16 @@ Commit message types
 
 This means that PATCHes are bug fixes and MINORs add new features but neither of them break what worked before. <br/> Finally, MAJORs add changes that won’t work with earlier versions.
 
-:sparkles: Add new feature 🌟
-:bug: Fix bug 🐛
-:recycle: Refactor code ♻️
-:boom: Breaking change 💥
-:lock: Improve security 🔒
-:memo: Update documentation 📝
-:rocket: Improve performance 🚀
-:lipstick: Improve UI 💄
-:construction: Work in progress 🚧
-:tada: Release new version 🎉
+- :sparkles: Add new feature 🌟
+- :bug: Fix bug 🐛
+- :recycle: Refactor code ♻️
+- :boom: Breaking change 💥
+- :lock: Improve security 🔒
+- :memo: Update documentation 📝
+- :rocket: Improve performance 🚀
+- :lipstick: Improve UI 💄
+- :construction: Work in progress 🚧
+- :tada: Release new version 🎉
 
 <hr/>
 <hr/>
