@@ -25,7 +25,7 @@ const Navbar = () => {
           <h1
             className={`${merienda.className} text-textColor-main text-3xl font-bold leading-none`}
           >
-            TOSS
+            JOB HIVE
           </h1>
         </Link>
         <div className="hidden md:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center ">
