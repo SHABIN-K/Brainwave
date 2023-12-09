@@ -2,7 +2,7 @@ import { Toaster } from 'sonner';
 import Navbar from '@/components/Navbar';
 
 import '../globals.css';
-import AuthProvider from '@/components/ui/provider/ProviderLayout';
+import AuthProvider from '@/components/provider/ProviderLayout';
 
 
 export const metadata = {

@@ -58,7 +58,7 @@ const Nevbar = () => {
                   type="button"
                   className=" flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-gray-700  transition-all duration-300 ease-in-out hover:bg-accent-500 hover:text-gray-50 "
                   title="Log out"
-                  onClick={() => void signOut()}
+                  onClick={() =>signOut()}
                 >
                   <BiLogOut />
                   <p className=" hidden md:block">Log Out</p>
@@ -70,7 +70,7 @@ const Nevbar = () => {
               <button
                 type="button"
                 className=" rounded-full bg-white px-4 py-2 text-gray-700  transition-all duration-300 ease-in-out hover:bg-accent-500 hover:text-gray-50 "
-                onClick={() => void signIn('google')}
+                onClick={()=>signIn('google')}
               >
                 Sign In
               </button>
