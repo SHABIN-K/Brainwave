@@ -14,7 +14,7 @@ const Nevbar = () => {
           href="/"
           className="group flex items-center rounded-full  text-gray-500 transition-all duration-300 ease-in-out hover:text-accent-400"
         >
-          <h2 className=" relative text-xl font-medium tracking-wide">Toss</h2>
+          <h2 className="relative text-xl md:text-2xl font-medium tracking-wide">Toss</h2>
         </Link>
         <ul className=" flex items-center gap-2">
           {session?.user ? (
