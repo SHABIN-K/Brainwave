@@ -1,6 +1,7 @@
 import { Toaster } from 'sonner';
 
 import '../globals.css';
+import AuthProvider from '@/components/ui/provider/ProviderLayout';
 
 export const metadata = {
   title: 'Toss',
@@ -10,10 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="grid min-h-[100dvh] grid-rows-[auto_1fr] bg-light-500">
-        <Toaster richColors closeButton position="top-center" />
-        {children}
-      </body>
+      <AuthProvider>
+        <body className="grid min-h-[100dvh] grid-rows-[auto_1fr] bg-light-500">
+          <Toaster richColors closeButton position="top-center" />
+          {children}
+        </body>
+      </AuthProvider>
     </html>
   );
 }
