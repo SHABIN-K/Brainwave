@@ -11,10 +11,6 @@
     "commit": "git-cz"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/lab": "^5.0.0-alpha.150",
-    "@mui/material": "^5.14.15",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
