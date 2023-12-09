@@ -1,4 +1,4 @@
-import CompanyCardSkeleton from "./ui/CompanyCardSkeleton";
+import CompanyCardSkeleton from "./skeleton/CompanyCardSkeleton";
 
 
 const CompanyList = () => {
