@@ -1,6 +1,9 @@
 import { Toaster } from 'sonner';
+import Navbar from '@/components/Navbar';
 
 import '../globals.css';
+import CategoryLinks from '@/components/CategoryLinks';
+import CategoryList from '@/components/CategoryList';
 
 export const metadata = {
   title: 'Toss',
@@ -12,6 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="grid min-h-[100dvh] grid-rows-[auto_1fr] bg-light-500">
         <Toaster richColors closeButton position="top-center" />
+        <Navbar/>
+        <CategoryLinks/>
+        <CategoryList/>
         {children}
       </body>
     </html>
