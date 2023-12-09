@@ -8,7 +8,6 @@ import { BiAddToQueue, BiLogOut } from 'react-icons/bi';
 
 const Nevbar = () => {
   const { data: session } = useSession();
-  console.log(session);
   return (
     <header className="py-4">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4">
