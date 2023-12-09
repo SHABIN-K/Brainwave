@@ -1,7 +1,9 @@
 import { Toaster } from 'sonner';
+import Navbar from '@/components/Navbar';
 
 import '../globals.css';
 import AuthProvider from '@/components/ui/provider/ProviderLayout';
+st
 
 export const metadata = {
   title: 'Toss',
@@ -17,6 +19,7 @@ export default function RootLayout({ children }) {
           {children}
         </body>
       </AuthProvider>
+
     </html>
   );
 }
