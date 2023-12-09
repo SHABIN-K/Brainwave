@@ -1,43 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: #fff;
-  min-height: 100vh;
+body::selection {
+  color: none;
+  background: none;
+}
+/* For Mozilla Firefox */
+body::-moz-selection {
+  color: none;
+  background: none;
 }
 
-/* Disable touch highlighting for all elements */
-
-* {
-  -webkit-tap-highlight-color: transparent; /* For iOS Safari */
-  -webkit-touch-callout: none; /* Disable callout, iOS long-press menu */
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; /* Disable text selection on all elements */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: none;
 }
 
-/* Disable touch highlighting for all elements */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+/* //Check box  */
 
-.flex-center {
-  @apply flex justify-center items-center;
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
 }
 
-.flex-start {
-  @apply flex justify-start items-start;
+@keyframes skeleton-loading {
+  0% {
+    background-color: theme('colors.gray.100');
+  }
+  100% {
+    background-color: theme('colors.gray.200');
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
 }
 
-.flex-end {
-  @apply flex justify-end items-center;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 50%;
 }
 
-.flex-between {
-  @apply flex justify-between items-center;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: theme('colors.accent.500');
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.accent.700');
 }
