@@ -1,4 +1,4 @@
-const Empty = () => {
+const Empty = ({ label, error, reset }) => {
   return <div>Empty</div>;
 };
 
