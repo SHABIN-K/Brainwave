@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 
 import '../globals.css';
 import AuthProvider from '@/components/ui/provider/ProviderLayout';
-st
+
 
 export const metadata = {
   title: 'Toss',
@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
       <AuthProvider>
         <body className="grid min-h-[100dvh] grid-rows-[auto_1fr] bg-light-500">
           <Toaster richColors closeButton position="top-center" />
+          <Navbar/>
           {children}
         </body>
       </AuthProvider>
