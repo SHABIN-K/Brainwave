@@ -1,5 +1,4 @@
-import api from "~/utils/api";
-import CompanyCardSkeleton from "./ui/CompanyCardSkeleton";
+import CompanyCardSkeleton from './ui/CompanyCardSkeleton';
 
 const JobList = () => {
   const skeleton = Array.from({ length: 5 }, (_, i) => {
@@ -9,4 +8,4 @@ const JobList = () => {
   return <ul className="grid gap-6 ">{skeleton}</ul>;
 };
 
-export default api.withTRPC(JobList);
+export default JobList;
