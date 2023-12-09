@@ -8,12 +8,12 @@ datasource db {
 }
 
 model User {
-    id            String    @id @default(auto()) @map("_id") @db.ObjectId
+    id            String              @id @default(auto()) @map("_id") @db.ObjectId
     name          String?
-    email         String?   @unique
+    email         String?             @unique
     emailVerified DateTime?
     image         String?
-    isAdmin       Boolean   @default(false)
+    isAdmin       Boolean             @default(false)
     accounts      Account[]
     sessions      Session[]
 }
@@ -46,10 +46,10 @@ model Session {
 }
 
 model VerificationToken {
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
     identifier String
     token      String   @unique
     expires    DateTime
-    id         String   @id @default(auto()) @map("_id") @db.ObjectId
 
     @@unique([identifier, token])
 }
