@@ -1,9 +1,10 @@
-import React from 'react'
+const UserPostedJobs = ()=>{
 
-const UserPostedJobs = () => {
   return (
-    <div>UserPostedJobs</div>
-  )
-}
+    <>   
+     <p>No job posted </p>
+    </>
+  );
+};
 
-export default UserPostedJobs
+export default UserPostedJobs;
