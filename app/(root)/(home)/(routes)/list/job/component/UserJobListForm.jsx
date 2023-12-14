@@ -1,194 +1,100 @@
-import React, { useState } from "react";
-import { Field, Form, Formik } from "formik";
-import * as Yup from "yup";
-import { JobType, WorkPlace } from "@prisma/client";
-import { useSession } from "next-auth/react";
-import { toast } from "sonner";
-import RichTextEditor from "@/components/input/RichTextEditor";
-import PrimaryButton from "@/components/button/PrimaryButton";
-import Loader from "@/components/ui/Loading";
-import { TextInput } from "@/components/input/TextInput";
+import PrimaryButton from '@/components/button/PrimaryButton';
+import FormInput from '@/components/input/FormInput';
+import RichTextEditor from '@/components/input/RichTextEditor';
+import React, { useState } from 'react';
 
-const DisplayingErrorMessagesSchema = Yup.object().shape({
-  title: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  education: Yup.string()
-    .required("Required")
-    .min(2, "Too Short!")
-    .max(20, "Too Long!"),
-  role: Yup.string().required("Required"),
-  salary: Yup.number().min(0, "Salary can be negative ???"),
-  companyId: Yup.string().required("Required"),
-  applyUrl: Yup.string().required("Required"),
-  subCategoryId: Yup.string().required("Required"),
-  categoryId: Yup.string().required("Required"),
-});
-
-function UserJobListForm() {
-  const { data: session } = useSession();
-
-  const [desc, setDesc] = useState(
-    "Job Listing Description Such as Skills role responsibility"
-  );
-
-  const [applyInstruction, setApplyInstruction] = useState("");
-
-
+const UserJobListForm = () => {
+  const [desc, setDesc] = useState();
+  const [applyInstruction, setApplyInstruction] = useState('');
+  const styleJobList = {
+    classlabel: 'pb-1 text-xs capitalize text-gray-600 dark:text-gray-100',
+    classInput:
+      'block w-full rounded-md border-0 pl-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
+  };
 
   return (
-    <Formik
-      initialValues={{
-        title: undefined,
-        type: "FULL_TIME",
-        education: "Any Graduate",
-        role: undefined,
-        workPlace: "REMOTE",
-        location: undefined,
-        categoryId: undefined,
-        subCategoryId: undefined,
-        applyUrl: undefined,
-        companyId: undefined,
-      }}
-      validationSchema={DisplayingErrorMessagesSchema}
-      onSubmit={(values) => {
-        listJob.mutate({
-          title: values.title,
-          desc: desc,
-          type: values.type,
-          education: values.education,
-          role: values.role,
-          experienceMin: values.experienceMin,
-          experienceMax: values.experienceMax,
-          salary: values.salary,
-          workPlace: values.workPlace,
-          location: values.location,
-          companyId: values.companyId,
-          categoryId: values.categoryId,
-          subCategoryId: values.subCategoryId,
-          applyUrl: values.applyUrl,
-          applyEmail: values.applyEmail,
-          applyInstruction: applyInstruction,
-          userId: session.user.id,
-        });
-      }}
-    >
-      {({ errors, touched, values }) => (
-        <Form className="grid gap-6 md:grid-cols-2">
-          <div className="grid h-fit gap-4">
-            <Field
-              component={TextInput}
-              name="title"
-              id="title"
-              title="title"
-              placeholder="Job Title"
-            />
-
-            <RichTextEditor
-              value={desc}
-              onChange={setDesc}
-              title="Job Description"
-            />
-
-           {/* {companies && (
-              <SelectV1
-                options={companies}
-                name="companyId"
-                title="Select Company *"
-              />
-           )}
-
-            <div className="grid grid-cols-2 gap-4">
-              {categories && (
-                <SelectV1
-                  options={categories}
-                  name="categoryId"
-                  title="Job Department *"
-                />
-              )}
-              {subCategories && (
-                <SelectV1
-                  options={subCategories}
-                  name="subCategoryId"
-                  title="Job Role Position"
-                />
-              )}
-              </div>*/}
-
-            <Field
-              component={TextInput}
-              name="education"
-              id="education"
-              title="education"
-              placeholder="Any / Btech / MCA"
-            />
-            <Field
-              component={TextInput}
-              name="role"
-              id="role"
-              title="role"
-              placeholder="SDE 1 ~ / Web Developer / Driver 🫥 "
+    <form className="grid gap-6 md:grid-cols-2">
+      <div className="grid h-fit gap-4 md:mb-5">
+        <FormInput
+          label="Title"
+          type="text"
+          name="job-title"
+          autoComplete="job-title"
+          placeholder="Job Title"
+          //value={newPassword}
+          // onChange={(e) => setNewPassword(e.target.value)}
+          classLabel={styleJobList.classlabel}
+          classInput={styleJobList.classInput}
+        />
+        <RichTextEditor value={desc} onChange={setDesc} title="Job Description" />
+        <div>
+          <FormInput
+            label="education"
+            type="text"
+            name="education"
+            autoComplete="education"
+            placeholder="Qualification"
+            //value={newPassword}
+            // onChange={(e) => setNewPassword(e.target.value)}
+            classLabel={styleJobList.classlabel}
+            classInput={styleJobList.classInput}
+          />
+        </div>
+      </div>
+      <div className="grid items-start gap-4">
+        <div className="grid-cols-2 pt-3 gap-4">
+          <div className="pr-72">
+            <FormInput
+              label="Salary"
+              type="text"
+              name="salary"
+              autoComplete="salary"
+              placeholder="Salary"
+              //value={newPassword}
+              // onChange={(e) => setNewPassword(e.target.value)}
+              classLabel={styleJobList.classlabel}
+              classInput={styleJobList.classInput}
             />
           </div>
-
-          <div className=" grid items-start gap-4">
-            <div className="grid grid-cols-2 gap-4">
-            
-              <Field
-                component={TextInput}
-                name="salary"
-                id="salary"
-                title="Salary LPA"
-                type="number"
-                placeholder="Salary"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Field
-                component={TextInput}
-                name="experienceMin"
-                id="experienceMin"
-                title="experience Min"
-                type="number"
-                placeholder="0 | > 0"
-              />
-
-              <Field
-                component={TextInput}
-                name="experienceMax"
-                id="experienceMax"
-                title="experience Max"
-                type="number"
-                placeholder="Maximum experience"
-              />
-            </div>
-            <Field
-              component={TextInput}
+          <div className='pr-20'>
+            <FormInput
+              label="Apply Url"
+              type="text"
               name="applyUrl"
-              id="applyUrl"
-              title="Apply Url"
+              autoComplete="applyUrl"
               placeholder="https://company.com/jobid/apply"
+              //value={newPassword}
+              // onChange={(e) => setNewPassword(e.target.value)}
+              classLabel={styleJobList.classlabel}
+              classInput={styleJobList.classInput}
             />
-            <Field
-              component={TextInput}
-              name="applyEmail"
-              id="applyEmail"
-              title="Apply Email"
-              placeholder="Apply Email if any"
+          </div>
+          <div className='pr-20'>
+
+          <FormInput
+            label="Apply Email"
+            type="text"
+            name="applyEmail"
+            autoComplete="applyEmail"
+            placeholder="Apply Email if any"
+            //value={newPassword}
+            // onChange={(e) => setNewPassword(e.target.value)}
+            classLabel={styleJobList.classlabel}
+            classInput={styleJobList.classInput}
             />
+            </div>
             <RichTextEditor
               value={applyInstruction}
               title="Apply Instruction (if any)"
               onChange={setApplyInstruction}
             />
-            <PrimaryButton className=" my-4 w-full" type="submit">
+             <PrimaryButton className=" my-4 w-full" type="submit">
               List
             </PrimaryButton>
-          </div>
-        </Form>
-      )}
-    </Formik>
+        </div>
+      </div>
+    </form>
   );
-}
+};
+
 export default UserJobListForm;
