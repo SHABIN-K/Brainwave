@@ -1,11 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid';
+
+import FormInput from '@/components/input/FormInput';
 import { useState } from 'react';
 const UserPostedJobs = () => {
   const [selectedGender, setSelectedGender] = useState('');
 
   const handleGenderChange = (event) => {
     setSelectedGender(event.target.value);
+  };
+
+  const styleEditProfile = {
+    classlabel: 'block text-sm font-medium leading-6 text-gray-900',
+    classInput:
+      'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
   };
 
   return (
@@ -161,33 +168,32 @@ const UserPostedJobs = () => {
                   </div>
                 </div>
                 <div className="space-x-5">
-                <label
+                  <label
                     htmlFor="Gender"
                     className="block text-sm font-medium leading-6 text-gray-900 ml-5"
                   >
-                   Gender
+                    Gender
                   </label>
-                  <div className='mt-3 space-x-3'>
-                  <label>
-                    <input
-                    
-                      type="radio"
-                      value="male"
-                      checked={selectedGender === 'male'}
-                      onChange={handleGenderChange}
-                    />
-                    Male
-                  </label>
+                  <div className="mt-3 space-x-3">
+                    <label>
+                      <input
+                        type="radio"
+                        value="male"
+                        checked={selectedGender === 'male'}
+                        onChange={handleGenderChange}
+                      />
+                      Male
+                    </label>
 
-                  <label>
-                    <input
-                      type="radio"
-                      value="female"
-                      checked={selectedGender === 'female'}
-                      onChange={handleGenderChange}
-                    />
-                    Female
-                  </label>
+                    <label>
+                      <input
+                        type="radio"
+                        value="female"
+                        checked={selectedGender === 'female'}
+                        onChange={handleGenderChange}
+                      />
+                      Female
+                    </label>
                   </div>
                 </div>
               </div>
@@ -244,21 +250,16 @@ const UserPostedJobs = () => {
               </div>
 
               <div className="sm:col-span-2">
-                <label
-                  htmlFor="postal-code"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  ZIP / Postal code
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="postal-code"
-                    id="postal-code"
-                    autoComplete="postal-code"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
+                <FormInput
+                  label="ZIP / Postal code"
+                  type="text"
+                  name="postal-code"
+                  autoComplete="postal-code"
+                  //value={newPassword}
+                  // onChange={(e) => setNewPassword(e.target.value)}
+                  classLabel={styleEditProfile.classlabel}
+                  classInput={`${styleEditProfile.classInput} mt-2`}
+                />
               </div>
             </div>
           </div>
