@@ -15,7 +15,6 @@ const UserPostedJobs = () => {
   const [streetAddress, setStreetAddress] = useState('');
   const [selectedGender, setSelectedGender] = useState('');
 
-
   const handleGenderChange = (event) => {
     setSelectedGender(event.target.value);
   };
