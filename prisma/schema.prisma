@@ -8,14 +8,15 @@ datasource db {
 }
 
 model User {
-    id            String              @id @default(auto()) @map("_id") @db.ObjectId
+    id            String        @id @default(auto()) @map("_id") @db.ObjectId
     name          String?
-    email         String?             @unique
+    email         String?       @unique
     emailVerified DateTime?
     image         String?
-    isAdmin       Boolean             @default(false)
+    isAdmin       Boolean       @default(false)
     accounts      Account[]
     sessions      Session[]
+    userDetails   UserDetails[]
 }
 
 // Necessary for Next auth
@@ -52,4 +53,10 @@ model VerificationToken {
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+model UserDetails {
+    id     String  @id @default(auto()) @map("_id") @db.ObjectId
+    User   User?   @relation(fields: [userId], references: [id])
+    userId String? @db.ObjectId
 }
