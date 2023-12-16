@@ -1,8 +1,8 @@
 "use client";
 import { Tab } from "@headlessui/react";
-import UserPostedJobs from "./components/UserPostedJobs";
 import UserProfile from "./components/UserProfile";
 import EditUserProfile from "./components/EditUserProfile";
+import EditCompany from "./components/EditCompany";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -37,18 +37,18 @@ const Profile = () => {
       <Tab.Group>
         <Tab.List>
           <TabItem title={"Profile"} />
-          <TabItem title={"Posted Jobs"} />
           <TabItem title={"Edit Profile"}/>
+          <TabItem title={"Edit Company"} />
         </Tab.List>
         <Tab.Panels>
           <TabPanelItem>
             <UserProfile/>
           </TabPanelItem>
           <TabPanelItem>
-            <UserPostedJobs />
+            <EditUserProfile />
           </TabPanelItem>
           <TabPanelItem>
-            <EditUserProfile />
+            <EditCompany />
           </TabPanelItem>
         </Tab.Panels>
       </Tab.Group>
