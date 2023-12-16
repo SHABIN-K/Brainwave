@@ -30,7 +30,17 @@ const UserPostedJobs = () => {
   };
 
   const handleClear = () => {
-    console.log('hello world!');
+    setZip('');
+    setAge('');
+    setAbout('');
+    setEmail('');
+    setRegion('');
+    setUsername('');
+    setLastname('');
+    setFirstName('');
+    setMobilenumber('');
+    setStreetAddress('');
+    setSelectedGender('');
   };
 
   return (
