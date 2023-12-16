@@ -5,13 +5,16 @@ import { useState } from 'react';
 const UserPostedJobs = () => {
   const [zip, setZip] = useState('');
   const [Age, setAge] = useState('');
+  const [about, setAbout] = useState('');
   const [email, setEmail] = useState('');
   const [region, setRegion] = useState('');
+  const [username, setUsername] = useState('');
   const [lastname, setLastname] = useState('');
   const [firstName, setFirstName] = useState('');
   const [mobilenumber, setMobilenumber] = useState('');
   const [streetAddress, setStreetAddress] = useState('');
   const [selectedGender, setSelectedGender] = useState('');
+
 
   const handleGenderChange = (event) => {
     setSelectedGender(event.target.value);
@@ -23,15 +26,13 @@ const UserPostedJobs = () => {
       'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
   };
 
+  const handleSubmit = () => {
+    console.log('hello world!');
+  };
 
-  const handleSubmit = () =>{
-    console.log("hello world!");
-  }
-
-  const handleClear = () =>{
-    console.log("hello world!");
-  }
-
+  const handleClear = () => {
+    console.log('hello world!');
+  };
 
   return (
     <form>
@@ -62,6 +63,8 @@ const UserPostedJobs = () => {
                     autoComplete="username"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="janesmith"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
               </div>
@@ -78,6 +81,8 @@ const UserPostedJobs = () => {
                   rows={3}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   defaultValue={''}
+                  value={about}
+                  onChange={(e) => setAbout(e.target.value)}
                 />
               </div>
               <p className="mt-3 text-sm leading-6 text-gray-600">
