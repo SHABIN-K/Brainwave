@@ -2,7 +2,7 @@
 
 import FormInput from '@/components/input/FormInput';
 import { useState } from 'react';
-const UserPostedJobs = () => {
+const EditUserProfile = () => {
   const [zip, setZip] = useState('');
   const [Age, setAge] = useState('');
   const [about, setAbout] = useState('');
@@ -269,4 +269,4 @@ const UserPostedJobs = () => {
   );
 };
 
-export default UserPostedJobs;
+export default EditUserProfile;
