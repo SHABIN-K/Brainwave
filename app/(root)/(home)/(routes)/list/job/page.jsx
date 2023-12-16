@@ -1,5 +1,5 @@
 "use client";
-import PageHeading from "@/components/skeleton/PageHeading";
+import PageHeading from "@/components/ui/PageHeading";
 import { useSession } from "next-auth/react";
 import { toast } from "sonner";
 import UserJobListForm from "./component/UserJobListForm";
