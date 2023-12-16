@@ -3,15 +3,15 @@
 import FormInput from '@/components/input/FormInput';
 import { useState } from 'react';
 const UserPostedJobs = () => {
-  const [selectedGender, setSelectedGender] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [email, setEmail] = useState('');
-  const [Age, setAge] = useState('');
-  const [streetAddress, setStreetAddress] = useState('');
-  const [mobilenumber, setMobilenumber] = useState('');
-  const [region, setRegion] = useState('');
   const [zip, setZip] = useState('');
+  const [Age, setAge] = useState('');
+  const [email, setEmail] = useState('');
+  const [region, setRegion] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [mobilenumber, setMobilenumber] = useState('');
+  const [streetAddress, setStreetAddress] = useState('');
+  const [selectedGender, setSelectedGender] = useState('');
 
   const handleGenderChange = (event) => {
     setSelectedGender(event.target.value);
