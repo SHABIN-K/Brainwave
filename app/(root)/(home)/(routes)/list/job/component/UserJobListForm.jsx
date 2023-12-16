@@ -4,8 +4,14 @@ import RichTextEditor from '@/components/input/RichTextEditor';
 import React, { useState } from 'react';
 
 const UserJobListForm = () => {
-  const [desc, setDesc] = useState();
+  const [desc, setDesc] = useState('');
+  const [title, setTitle] = useState('');
+  const [salary, setSalary] = useState('');
+  const [education, setEducation] = useState('');
+  const [applyEmail, setApplyEmail] = useState('');
   const [applyInstruction, setApplyInstruction] = useState('');
+
+
   const styleJobList = {
     classlabel: 'pb-1 text-xs capitalize text-gray-600 dark:text-gray-100',
     classInput:
@@ -21,8 +27,8 @@ const UserJobListForm = () => {
           name="job-title"
           autoComplete="job-title"
           placeholder="Job Title"
-          //value={newPassword}
-          // onChange={(e) => setNewPassword(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           classLabel={styleJobList.classlabel}
           classInput={styleJobList.classInput}
         />
@@ -34,8 +40,8 @@ const UserJobListForm = () => {
             name="education"
             autoComplete="education"
             placeholder="Qualification"
-            //value={newPassword}
-            // onChange={(e) => setNewPassword(e.target.value)}
+            value={education}
+            onChange={(e) => setEducation(e.target.value)}
             classLabel={styleJobList.classlabel}
             classInput={styleJobList.classInput}
           />
@@ -50,47 +56,34 @@ const UserJobListForm = () => {
               name="salary"
               autoComplete="salary"
               placeholder="Salary"
-              //value={newPassword}
-              // onChange={(e) => setNewPassword(e.target.value)}
+              value={salary}
+              onChange={(e) => setSalary(e.target.value)}
               classLabel={styleJobList.classlabel}
               classInput={styleJobList.classInput}
             />
           </div>
-          <div className='pr-20'>
-            <FormInput
-              label="Apply Url"
-              type="text"
-              name="applyUrl"
-              autoComplete="applyUrl"
-              placeholder="https://company.com/jobid/apply"
-              //value={newPassword}
-              // onChange={(e) => setNewPassword(e.target.value)}
-              classLabel={styleJobList.classlabel}
-              classInput={styleJobList.classInput}
-            />
-          </div>
-          <div className='pr-20'>
 
-          <FormInput
-            label="Apply Email"
-            type="text"
-            name="applyEmail"
-            autoComplete="applyEmail"
-            placeholder="Apply Email if any"
-            //value={newPassword}
-            // onChange={(e) => setNewPassword(e.target.value)}
-            classLabel={styleJobList.classlabel}
-            classInput={styleJobList.classInput}
+          <div className="pr-20">
+            <FormInput
+              label="Apply Email"
+              type="text"
+              name="applyEmail"
+              autoComplete="applyEmail"
+              placeholder="Apply Email if any"
+              value={applyEmail}
+              onChange={(e) => setApplyEmail(e.target.value)}
+              classLabel={styleJobList.classlabel}
+              classInput={styleJobList.classInput}
             />
-            </div>
-            <RichTextEditor
-              value={applyInstruction}
-              title="Apply Instruction (if any)"
-              onChange={setApplyInstruction}
-            />
-             <PrimaryButton className=" my-4 w-full" type="submit">
-              List
-            </PrimaryButton>
+          </div>
+          <RichTextEditor
+            value={applyInstruction}
+            title="Apply Instruction (if any)"
+            onChange={setApplyInstruction}
+          />
+          <PrimaryButton className=" my-4 w-full" type="submit">
+            List
+          </PrimaryButton>
         </div>
       </div>
     </form>
