@@ -3,6 +3,11 @@ import RichTextEditor from '@/components/input/RichTextEditor';
 import React, { useState } from 'react';
 
 const EditCompany = () => {
+const [companyname, setCompanyname] = useState('')
+const [email, setEmail] = useState('')
+const [mobilenumber, setMobilenumber] = useState('')
+const [streetAddress, setStreetAddress] = useState('')
+
   const [desc, setDesc] = useState('');
 
   const styleEditCompany = {
@@ -24,8 +29,8 @@ const EditCompany = () => {
             label="Company Name"
             type="text"
             name="company-name"
-            //value={compa}
-            //onChange={(e) => setFirstName(e.target.value)}
+            value={companyname}
+            onChange={(e) => setCompanyname(e.target.value)}
             classLabel={styleEditCompany.classlabel}
             classInput={`${styleEditCompany.classInput} mt-2`}
           />
@@ -39,8 +44,8 @@ const EditCompany = () => {
             type="email"
             name="email"
             autoComplete="email"
-            //value={email}
-            //onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             classLabel={styleEditCompany.classlabel}
             classInput={`${styleEditCompany.classInput} mt-2`}
           />
@@ -52,8 +57,8 @@ const EditCompany = () => {
             type="number"
             name="mobile number"
             autoComplete="address-level2"
-            //value={mobilenumber}
-            //onChange={(e) => setMobilenumber(e.target.value)}
+            value={mobilenumber}
+            onChange={(e) => setMobilenumber(e.target.value)}
             classLabel={styleEditCompany.classlabel}
             classInput={`${styleEditCompany.classInput} mt-2`}
           />
@@ -64,8 +69,8 @@ const EditCompany = () => {
             type="text"
             name="street-address"
             autoComplete="street-address"
-            //value={streetAddress}
-            //onChange={(e) => setStreetAddress(e.target.value)}
+            value={streetAddress}
+            onChange={(e) => setStreetAddress(e.target.value)}
             classLabel={styleEditCompany.classlabel}
             classInput={`${styleEditCompany.classInput} mt-2`}
           />
