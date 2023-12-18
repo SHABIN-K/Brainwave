@@ -2,6 +2,7 @@
 
 import { Tab } from '@headlessui/react';
 import EditCompany from './EditCompany';
+import CompanyDetails from './CompanyDetails';
 
 const Tabs = ['Company', 'Edit company'];
 const Company = () => {
@@ -23,7 +24,7 @@ const Company = () => {
       </Tab.List>
       <Tab.Panels className="mt-3 mx-2 sm:mx-8">
         <Tab.Panel>
-          <EditCompany />
+          <CompanyDetails />
         </Tab.Panel>
         <Tab.Panel>
           <EditCompany />
