@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import UserPostedJobs from './UserPostedJobs';
 import DialogueBox from '@/components/ui/DialogueBox';
 
-
 const UserProfile = () => {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false)
@@ -61,9 +60,9 @@ const UserProfile = () => {
           <button className="text-indigo-500 py-2 px-4  font-medium mt-4">Show more</button>
         </div>
       </div>
+
     <UserPostedJobs/>
     {isOpen && <DialogueBox isOpen={isOpen} setIsOpen={setIsOpen}/>}
-
     </div>
   
   );

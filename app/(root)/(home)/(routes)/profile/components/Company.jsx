@@ -8,7 +8,7 @@ const Tabs = ['Company', 'Edit company'];
 const Company = () => {
   return (
     <Tab.Group>
-      <Tab.List className="flex w-full space-x-1 sm:w-2/5">
+      <Tab.List className="flex w-full space-x-1 sm:w-2/5 ">
         {Tabs.map((tab, index) => (
           <Tab
             key={index}
