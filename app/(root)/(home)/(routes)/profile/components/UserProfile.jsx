@@ -1,7 +1,6 @@
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import React from 'react';
-import UserPostedJobs from './UserPostedJobs';
 
 
 const UserProfile = () => {
@@ -58,7 +57,7 @@ const UserProfile = () => {
           <button className="text-indigo-500 py-2 px-4  font-medium mt-4">Show more</button>
         </div>
       </div>
-    <UserPostedJobs/>
+    
     </div>
   
   );
