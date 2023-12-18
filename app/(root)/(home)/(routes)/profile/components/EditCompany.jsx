@@ -21,7 +21,9 @@ const EditCompany = () => {
 
   return (
     <main className=" mx-auto w-full max-w-lg px-4 pb-16">
-      <h2 className=" py-4 text-[clamp(1rem,6vw,2rem)] font-medium capitalize">List New Company</h2>
+      <h2 className=" py-4 text-[clamp(1rem,6vw,2rem)] font-medium capitalize">
+        Edit your Company
+      </h2>
       <form>
         <div className="sm:col-span-2 ">
           <FormInput
