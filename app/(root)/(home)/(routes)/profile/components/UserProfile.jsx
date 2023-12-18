@@ -1,11 +1,16 @@
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import UserPostedJobs from './UserPostedJobs';
+import DialogueBox from '@/components/ui/DialogueBox';
 
 
 const UserProfile = () => {
   const { data: session } = useSession();
+  const [isOpen, setIsOpen] = useState(false)
+
+
+
   return (
     <div>
       <div className="p-8 bg-white shadow mt-24 md:mt-14">
@@ -32,11 +37,9 @@ const UserProfile = () => {
           </div>
 
           <div className="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
-            <button className="text-white py-2 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-              Connect
-            </button>
-            <button className="text-white py-2 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-              Message
+            <button className="text-white py-2 px-8 rounded-lg bg-accent-400 hover:bg-accent-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
+            onClick={()=>setIsOpen(true)}>
+              Add Company
             </button>
           </div>
         </div>
@@ -59,6 +62,8 @@ const UserProfile = () => {
         </div>
       </div>
     <UserPostedJobs/>
+    {isOpen && <DialogueBox isOpen={isOpen} setIsOpen={setIsOpen}/>}
+
     </div>
   
   );
