@@ -2,6 +2,7 @@ import FormInput from '@/components/input/FormInput';
 import RichTextEditor from '@/components/input/RichTextEditor';
 import React, { useState } from 'react';
 
+
 const EditCompany = () => {
   const [desc, setDesc] = useState('');
   const [email, setEmail] = useState('');
