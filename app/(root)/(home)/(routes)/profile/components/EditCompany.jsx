@@ -3,12 +3,11 @@ import RichTextEditor from '@/components/input/RichTextEditor';
 import React, { useState } from 'react';
 
 const EditCompany = () => {
-const [companyname, setCompanyname] = useState('')
-const [email, setEmail] = useState('')
-const [mobilenumber, setMobilenumber] = useState('')
-const [streetAddress, setStreetAddress] = useState('')
-
   const [desc, setDesc] = useState('');
+  const [email, setEmail] = useState('');
+  const [companyname, setCompanyname] = useState('');
+  const [mobilenumber, setMobilenumber] = useState('');
+  const [streetAddress, setStreetAddress] = useState('');
 
   const styleEditCompany = {
     classlabel: 'block text-sm font-medium leading-6 text-gray-600 capitalize ',
