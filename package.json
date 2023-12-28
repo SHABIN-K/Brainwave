@@ -14,7 +14,7 @@
     "@heroicons/react": "^2.0.18",
     "@prisma/client": "^5.7.0",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "axios": "^1.6.2",
+    "axios": "^1.6.3",
     "framer-motion": "^10.16.16",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
