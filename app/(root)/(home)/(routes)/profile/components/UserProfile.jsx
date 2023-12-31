@@ -62,7 +62,7 @@ const UserProfile = () => {
       </div>
 
     <UserPostedJobs/>
-    {isOpen && <DialogueBox isOpen={isOpen} setIsOpen={setIsOpen}/>}
+  <DialogueBox isOpen={isOpen} setIsOpen={setIsOpen} user={session?.user?.email}/>
     </div>
   
   );
