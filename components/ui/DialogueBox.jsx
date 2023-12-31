@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import { CompanyValidation } from '@/lib/validation/company';
 import axios from 'axios';
 
-const DialogueBox = ({ isOpen, setIsOpen }) => {
+const DialogueBox = ({ isOpen, setIsOpen, user }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [desc, setDesc] = useState('');
   const [email, setEmail] = useState('');
@@ -31,6 +31,7 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
       phonenumber: mobilenumber,
       address: streetAddress,
     };
+    console.log(userInput);
 
     try {
       // Validate the user input
@@ -44,6 +45,7 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
       } else {
         // If validation is successful, make the API request
         const response = await axios.post("/api/company", {
+          userEmail:user,
           name: companyname,
           description: desc,
           email: email,
@@ -130,7 +132,7 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
                   <div className="sm:col-span-2 sm:col-start-1">
                     <FormInput
                       label="mobile number"
-                      type="number"
+                      type="text"
                       name="mobile number"
                       autoComplete="address-level2"
                       value={mobilenumber}
