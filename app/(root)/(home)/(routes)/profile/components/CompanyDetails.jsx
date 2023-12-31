@@ -1,9 +1,9 @@
-import React from 'react';
-import UserPostedJobs from './UserPostedJobs';
-import Youtube from '@/public/asset/Youtube';
-import Website from '@/public/asset/Website';
+import UserPostedJobs from "./UserPostedJobs";
+import Youtube from "@/public/asset/Youtube";
+import Website from "@/public/asset/Website";
 
-const CompanyDetails = () => {
+
+const CompanyDetails = ({post}) => {  
   return (
     <div>
       <div className="w-full flex items-center justify-center dark:bg-gray-900">
@@ -17,18 +17,19 @@ const CompanyDetails = () => {
               className="font-display mb-2 text-2xl font-semibold dark:text-gray-200"
               itemprop="author"
             >
-              RAHMATH CHICKEN STALL
+              {post.name}
             </p>
 
             <div className="mb-1 md:text-lg text-gray-600">
-              <p>Rahmath Chicken Stall is a Chicken Stall</p>
+              <p>
+                {post?.description?.slice(3,-4)}</p>
             </div>
             <div className="text-gray-500">
-              <p>Kozhikkode,vengara</p>
+              <p>{post.address}</p>
             </div>
             <div className="flex text-gray-400 gap-5 mt-1">
-              <p>helloShabin@gmail.com</p>
-              <p>+918590814574</p>
+              <p>{post.email}</p>
+              <p>{post.phonenumber}</p>
             </div>
 
             <div className="flex gap-4 mt-2">

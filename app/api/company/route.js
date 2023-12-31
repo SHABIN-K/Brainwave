@@ -7,24 +7,46 @@ export async function POST(req) {
       where: { email: userEmail },
     });
 
-    // Create the new user
-    const newCompany = await prisma.Company.create({
-      data: {
+    const existingCompany = await prisma.Company.findMany({
+      where: {
         userId: user.id,
-        name,
-        description,
-        email,
-        phonenumber,
-        address,
       },
     });
+    console.log(existingCompany.length === 0);
+    if (existingCompany.length === 1) {
+      return new Response("Company already exist!!", {
+        status: 200, // Created
+        statusText: "FAILED",
+      });
+    } else {
+      await prisma.User.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          isCreated: true,
+        },
+      });
 
-    return new Response(JSON.stringify(newCompany), {
-      status: 201, // Created
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+      // Create the new user
+      const newCompany = await prisma.Company.create({
+        data: {
+          userId: user.id,
+          name,
+          description,
+          email,
+          phonenumber,
+          address,
+        },
+      });
+
+      return new Response(JSON.stringify(newCompany), {
+        status: 201, // Created
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
   } catch (error) {
     console.error("Error processing the request:", error);
 
