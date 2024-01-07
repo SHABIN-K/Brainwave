@@ -6,6 +6,7 @@ import CompanyDetails from "./CompanyDetails";
 import { useSession } from "next-auth/react";
 import { useUSerCompany } from "@/lib/hooks/useCompany";
 import { useEffect, useMemo, useState } from "react";
+import { toast } from "sonner";
 
 const Tabs = ["Company", "Edit company"];
 const Company = () => {
@@ -46,7 +47,7 @@ const Company = () => {
           <CompanyDetails post={post} />
         </Tab.Panel>
         <Tab.Panel>
-          <EditCompany />
+          <EditCompany post={post}/>
         </Tab.Panel>
       </Tab.Panels>
     </Tab.Group>

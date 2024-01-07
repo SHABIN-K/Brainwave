@@ -1,16 +1,18 @@
 import FormInput from "@/components/input/FormInput";
 import RichTextEditor from "@/components/input/RichTextEditor";
 import { CompanyValidation } from "@/lib/validation/company";
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "sonner";
 
-const EditCompany = () => {
+const EditCompany = ({ post }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const [desc, setDesc] = useState("");
-  const [email, setEmail] = useState("");
-  const [companyname, setCompanyname] = useState("");
-  const [mobilenumber, setMobilenumber] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
+  const [desc, setDesc] = useState(post.description);
+  const [email, setEmail] = useState(post.email);
+  const [companyname, setCompanyname] = useState(post.name);
+  const [mobilenumber, setMobilenumber] = useState(post.phonenumber);
+  const [streetAddress, setStreetAddress] = useState(post.address);
 
   const styleEditCompany = {
     classlabel: "block text-sm font-medium leading-6 text-gray-600 capitalize ",
@@ -24,16 +26,16 @@ const EditCompany = () => {
 
     // Validate user input using the schema
     const userInput = {
-      company: companyname,
+      name: companyname,
       description: desc,
       email: email,
-      phoneNumber: mobilenumber,
-      addres: streetAddress,
+      phonenumber: mobilenumber,
+      address: streetAddress,
     };
 
     try {
       // Validate the user input
-      const validation = CompanyValidation.editCompany.safeParse(userInput);
+      const validation = CompanyValidation.addCompany.safeParse(userInput);
       //if validation is failure, return error message
       if (validation.success === false) {
         const { issues } = validation.error;
@@ -42,12 +44,13 @@ const EditCompany = () => {
         });
       } else {
         // If validation is successful, make the API request
-        const response = await axios.post("/api/post", {
-          company: companyname,
+        const response = await axios.patch("/api/company", {
+          id: post.id,
+          name: companyname,
           description: desc,
           email: email,
           phoneNumber: mobilenumber,
-          addres: streetAddress,
+          address: streetAddress,
         });
         if (response.statusText === "FAILED") {
           toast.error(response.data);
@@ -93,7 +96,6 @@ const EditCompany = () => {
             label="email"
             type="email"
             name="email"
-            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             classLabel={styleEditCompany.classlabel}
@@ -104,9 +106,8 @@ const EditCompany = () => {
         <div className="sm:col-span-2 sm:col-start-1">
           <FormInput
             label="mobile number"
-            type="number"
+            type="text"
             name="mobile number"
-            autoComplete="address-level2"
             value={mobilenumber}
             onChange={(e) => setMobilenumber(e.target.value)}
             classLabel={styleEditCompany.classlabel}
@@ -118,7 +119,6 @@ const EditCompany = () => {
             label="address"
             type="text"
             name="street-address"
-            autoComplete="street-address"
             value={streetAddress}
             onChange={(e) => setStreetAddress(e.target.value)}
             classLabel={styleEditCompany.classlabel}
