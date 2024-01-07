@@ -4,7 +4,7 @@ export async function POST(req) {
   try {
     // Check if a user already exists by email
     const user = await prisma.User.findFirst({
-      where: { email: userEmail },
+      where: { id: userEmail },
     });
 
     const existingCompany = await prisma.Company.findMany({
@@ -12,7 +12,7 @@ export async function POST(req) {
         userId: user.id,
       },
     });
-    console.log(existingCompany.length === 0);
+  
     if (existingCompany.length === 1) {
       return new Response("Company already exist!!", {
         status: 200, // Created

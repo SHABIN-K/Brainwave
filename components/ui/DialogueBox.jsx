@@ -1,23 +1,24 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
-import FormInput from '../input/FormInput';
-import RichTextEditor from '../input/RichTextEditor';
-import { toast } from 'sonner';
-import { CompanyValidation } from '@/lib/validation/company';
-import axios from 'axios';
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import FormInput from "../input/FormInput";
+import RichTextEditor from "../input/RichTextEditor";
+import { toast } from "sonner";
+import { CompanyValidation } from "@/lib/validation/company";
+import axios from "axios";
+import { BiWindows } from "react-icons/bi";
 
 const DialogueBox = ({ isOpen, setIsOpen, user }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [desc, setDesc] = useState('');
-  const [email, setEmail] = useState('');
-  const [companyname, setCompanyname] = useState('');
-  const [mobilenumber, setMobilenumber] = useState('');
-  const [streetAddress, setStreetAddress] = useState('');
+  const [desc, setDesc] = useState("");
+  const [email, setEmail] = useState("");
+  const [companyname, setCompanyname] = useState("");
+  const [mobilenumber, setMobilenumber] = useState("");
+  const [streetAddress, setStreetAddress] = useState("");
 
   const styleAddCompany = {
-    classlabel: 'block text-sm font-medium leading-6 text-gray-600 capitalize ',
+    classlabel: "block text-sm font-medium leading-6 text-gray-600 capitalize ",
     classInput:
-      'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
+      "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6",
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +32,6 @@ const DialogueBox = ({ isOpen, setIsOpen, user }) => {
       phonenumber: mobilenumber,
       address: streetAddress,
     };
-    console.log(userInput);
 
     try {
       // Validate the user input
@@ -45,7 +45,7 @@ const DialogueBox = ({ isOpen, setIsOpen, user }) => {
       } else {
         // If validation is successful, make the API request
         const response = await axios.post("/api/company", {
-          userEmail:user,
+          userEmail: user,
           name: companyname,
           description: desc,
           email: email,
@@ -63,7 +63,9 @@ const DialogueBox = ({ isOpen, setIsOpen, user }) => {
       console.error("NEXT_AUTH Error: " + error);
       toast.error("something went wrong ");
     } finally {
+      closeModal();
       setIsLoading(false);
+      window.location.herf = "/profile";
     }
   };
 
@@ -114,7 +116,11 @@ const DialogueBox = ({ isOpen, setIsOpen, user }) => {
                     />
                   </div>
                   <div>
-                    <RichTextEditor title="Company Description" value={desc} onChange={setDesc} />
+                    <RichTextEditor
+                      title="Company Description"
+                      value={desc}
+                      onChange={setDesc}
+                    />
                   </div>
                   <div className="sm:col-span-4">
                     <FormInput
