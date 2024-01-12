@@ -33,7 +33,7 @@
     "eslint-config-next": "14.0.4",
     "lint-staged": "^15.0.2",
     "postcss": "^8",
-    "prettier": "3.2.0",
+    "prettier": "3.2.1",
     "prisma": "^5.7.0",
     "tailwindcss": "^3"
   }
