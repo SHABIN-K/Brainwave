@@ -1,7 +1,7 @@
-import CategoryLinks from '@/components/CategoryLinks';
-import CompanyList from '@/components/CategoryList';
-import JobList from '@/components/JobList';
-import Search from '@/components/Search';
+import CategoryLinks from "@/components/CategoryLinks";
+import CompanyList from "@/components/CategoryList";
+import JobList from "@/components/JobList";
+import Search from "@/components/Search";
 
 export default function Home() {
   return (
@@ -9,17 +9,12 @@ export default function Home() {
       <Search />
       <CategoryLinks />
       <div className="grid gap-6 md:grid-cols-2">
-        <div className=" hidden md:block">
-          <h2 className="py-4 text-center text-[clamp(1rem,6vw,2rem)] font-medium capitalize">
-            Companies
-          </h2>
-          <CompanyList />
-        </div>
         <div>
           <h2 className=" py-4 text-center text-[clamp(1rem,6vw,2rem)] font-medium capitalize">
             Jobs
           </h2>
           <JobList />
+        
         </div>
       </div>
     </main>
