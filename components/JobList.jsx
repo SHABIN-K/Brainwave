@@ -1,17 +1,10 @@
-"use client"
-import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
+"use client";
+import { usePost } from "@/lib/hooks/usePost";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { BiBuildings, BiRupee, BiTimeFive } from "react-icons/bi";
 
-
-
-
-const TextItem = ({
-  prefix,
-  suffix,
-  icon: Icon,
-}) => {
+const TextItem = ({ prefix, suffix, icon: Icon }) => {
   return (
     <div className="flex items-center gap-1 text-sm capitalize">
       <Icon size={16} className="text-accent-400" title={prefix || ""} />
@@ -20,13 +13,23 @@ const TextItem = ({
   );
 };
 
+const JobList = () => {
+  const { data, error } = usePost();
+  const [postData, setPostData] = useState([]);
+  const post = useMemo(() => postData, [postData]);
 
+  useEffect(() => {
+    if (data) {
+      setPostData(data);
+    }
+    if (error) {
+      console.error(error);
+      toast("Uh-oh!!!");
+    }
+  }, [error, data]);
 
-const JobList = ({job}) => {
-  const { data: session } = useSession();
   return (
     <div
-     
       className={`relative z-10 grid items-center gap-2 rounded-2xl bg-white p-4 shadow-2xl shadow-accent-100/50 hover:shadow-accent-100 hover:ring-2 hover:ring-accent-200 
          "ring-2 ring-accent-200" : ""
       }`}
@@ -58,6 +61,5 @@ const JobList = ({job}) => {
     </div>
   );
 };
-
 
 export default JobList;
