@@ -42,3 +42,21 @@ export async function POST(req) {
     });
   }
 }
+
+export async function GET() {
+  try {
+    const allPosts = await prisma.Post.findMany();
+    return new Response(JSON.stringify(allPosts), {
+      status: 200, // Created
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (error) {
+    console.error("Error processing the request:", error);
+
+    return new Response("An error occurred", {
+      status: 500, // Internal Server Error
+    });
+  }
+}
