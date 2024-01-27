@@ -36,10 +36,11 @@ const UserProfile = () => {
           </div>
 
           <div className="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
+            { !session?.user?.isCreated &&(
             <button className="text-white py-2 px-8 rounded-lg bg-accent-400 hover:bg-accent-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
             onClick={()=>setIsOpen(true)}>
-              Add Company
-            </button>
+            Add Company 
+            </button>) }
           </div>
         </div>
 
@@ -61,8 +62,13 @@ const UserProfile = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
    
     {isOpen && <DialogueBox isOpen={isOpen} setIsOpen={setIsOpen}/>}
+=======
+    <UserPostedJobs/>
+  <DialogueBox isOpen={isOpen} setIsOpen={setIsOpen} user={session?.user?.id}/>
+>>>>>>> bbb9cd5fc69634d77bbac8e6fbe024550808e796
     </div>
   
   );

@@ -1,37 +1,58 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
-import FormInput from '../input/FormInput';
-import RichTextEditor from '../input/RichTextEditor';
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import FormInput from "../input/FormInput";
+import RichTextEditor from "../input/RichTextEditor";
+import { toast } from "sonner";
+import { CompanyValidation } from "@/lib/validation/company";
+import axios from "axios";
+import { BiWindows } from "react-icons/bi";
 
-const DialogueBox = ({ isOpen, setIsOpen }) => {
-  const [desc, setDesc] = useState('');
-  const [email, setEmail] = useState('');
-  const [companyname, setCompanyname] = useState('');
-  const [mobilenumber, setMobilenumber] = useState('');
-  const [streetAddress, setStreetAddress] = useState('');
+const DialogueBox = ({ isOpen, setIsOpen, user }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [desc, setDesc] = useState("");
+  const [email, setEmail] = useState("");
+  const [companyname, setCompanyname] = useState("");
+  const [mobilenumber, setMobilenumber] = useState("");
+  const [streetAddress, setStreetAddress] = useState("");
 
-  const styleEditCompany = {
-    classlabel: 'block text-sm font-medium leading-6 text-gray-600 capitalize ',
+  const styleAddCompany = {
+    classlabel: "block text-sm font-medium leading-6 text-gray-600 capitalize ",
     classInput:
-      'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6',
+      "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6",
   };
+<<<<<<< HEAD
   const handleSubmit = async() => {
+=======
+  const handleSubmit = async (e) => {
+>>>>>>> bbb9cd5fc69634d77bbac8e6fbe024550808e796
     e.preventDefault();
     setIsLoading(true);
 
     // Validate user input using the schema
     const userInput = {
+<<<<<<< HEAD
       title: title,
       instruction: applyInstruction,
       email: applyEmail,
       salary: salary,
       description: desc,
       education: education,
+=======
+      name: companyname,
+      description: desc,
+      email: email,
+      phonenumber: mobilenumber,
+      address: streetAddress,
+>>>>>>> bbb9cd5fc69634d77bbac8e6fbe024550808e796
     };
 
     try {
       // Validate the user input
+<<<<<<< HEAD
       const validation = JobValidation.addJob.safeParse(userInput);
+=======
+      const validation = CompanyValidation.addCompany.safeParse(userInput);
+>>>>>>> bbb9cd5fc69634d77bbac8e6fbe024550808e796
       //if validation is failure, return error message
       if (validation.success === false) {
         const { issues } = validation.error;
@@ -40,6 +61,7 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
         });
       } else {
         // If validation is successful, make the API request
+<<<<<<< HEAD
         const response = await axios.post("/api/post", {
           userEmail: user,
           title: title,
@@ -48,19 +70,38 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
           salary: salary,
           description: desc,
           education: education,
+=======
+        const response = await axios.post("/api/company", {
+          userEmail: user,
+          name: companyname,
+          description: desc,
+          email: email,
+          phonenumber: mobilenumber,
+          address: streetAddress,
+>>>>>>> bbb9cd5fc69634d77bbac8e6fbe024550808e796
         });
         if (response.statusText === "FAILED") {
           toast.error(response.data);
         } else {
           toast.success("Successfully created");
+<<<<<<< HEAD
           handleClear();
+=======
+          //handleReset();
+>>>>>>> bbb9cd5fc69634d77bbac8e6fbe024550808e796
         }
       }
     } catch (error) {
       console.error("NEXT_AUTH Error: " + error);
       toast.error("something went wrong ");
     } finally {
+<<<<<<< HEAD
       setIsLoading(false);
+=======
+      closeModal();
+      setIsLoading(false);
+      window.location.herf = "/profile";
+>>>>>>> bbb9cd5fc69634d77bbac8e6fbe024550808e796
     }
   };
 
@@ -106,12 +147,16 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
                       name="company-name"
                       value={companyname}
                       onChange={(e) => setCompanyname(e.target.value)}
-                      classLabel={styleEditCompany.classlabel}
-                      classInput={`${styleEditCompany.classInput} mt-2`}
+                      classLabel={styleAddCompany.classlabel}
+                      classInput={`${styleAddCompany.classInput} mt-2`}
                     />
                   </div>
                   <div>
-                    <RichTextEditor title="Company Description" value={desc} onChange={setDesc} />
+                    <RichTextEditor
+                      title="Company Description"
+                      value={desc}
+                      onChange={setDesc}
+                    />
                   </div>
                   <div className="sm:col-span-4">
                     <FormInput
@@ -121,21 +166,21 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
                       autoComplete="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      classLabel={styleEditCompany.classlabel}
-                      classInput={`${styleEditCompany.classInput} mt-2`}
+                      classLabel={styleAddCompany.classlabel}
+                      classInput={`${styleAddCompany.classInput} mt-2`}
                     />
                   </div>
 
                   <div className="sm:col-span-2 sm:col-start-1">
                     <FormInput
                       label="mobile number"
-                      type="number"
+                      type="text"
                       name="mobile number"
                       autoComplete="address-level2"
                       value={mobilenumber}
                       onChange={(e) => setMobilenumber(e.target.value)}
-                      classLabel={styleEditCompany.classlabel}
-                      classInput={`${styleEditCompany.classInput} mt-2`}
+                      classLabel={styleAddCompany.classlabel}
+                      classInput={`${styleAddCompany.classInput} mt-2`}
                     />
                   </div>
                   <div className="col-span-full mt-2">
@@ -146,8 +191,8 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
                       autoComplete="street-address"
                       value={streetAddress}
                       onChange={(e) => setStreetAddress(e.target.value)}
-                      classLabel={styleEditCompany.classlabel}
-                      classInput={`${styleEditCompany.classInput} mt-2`}
+                      classLabel={styleAddCompany.classlabel}
+                      classInput={`${styleAddCompany.classInput} mt-2`}
                     />
                   </div>
                   <div className="mt-6 flex px-52 gap-x-6 pl-1">
@@ -156,7 +201,7 @@ const DialogueBox = ({ isOpen, setIsOpen }) => {
                       type="button"
                       className="text-white  py-2 px-8 rounded-lg bg-accent-400 hover:bg-accent-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
                     >
-                      Save
+                      {isLoading ? "please wait ..." : "Save"}
                     </button>
                   </div>
                 </form>
