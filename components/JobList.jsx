@@ -27,7 +27,7 @@ const JobList = () => {
       toast("Uh-oh!!!");
     }
   }, [error, data]);
-
+console.log(post);
   return (
     <>
       {post.map((data, index) => {
@@ -44,18 +44,18 @@ const JobList = () => {
               target={"_blank"}
             >
               <h2 className="line-clamp-2 font-medium capitalize ">
-                Software tester
+                {data.title}
               </h2>
             </Link>
             <div className="col-span-1 flex flex-wrap items-center gap-2 md:col-span-1">
-              <TextItem prefix="job type" suffix="full day" icon={BiTimeFive} />
+              <TextItem prefix="job type" suffix="full time" icon={BiTimeFive} />
               <TextItem
                 prefix="Work Place"
-                suffix="remote"
+                suffix="hybrid"
                 icon={BiBuildings}
               />
               <div className="col-span-2 my-2 flex flex-wrap items-center gap-x-6 gap-y-1 md:col-span-1 md:my-[revert]">
-                <TextItem prefix="Salary" suffix="20 lpa" icon={BiRupee} />
+                <TextItem prefix="Salary" suffix={`${data.salary} Lpa` } icon={BiRupee} />
               </div>
             </div>
             <div className="grid grid-cols-2">
