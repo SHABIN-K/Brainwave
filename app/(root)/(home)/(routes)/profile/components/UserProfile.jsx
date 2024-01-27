@@ -1,7 +1,7 @@
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import UserPostedJobs from './UserPostedJobs';
+
 import DialogueBox from '@/components/ui/DialogueBox';
 
 const UserProfile = () => {
@@ -61,7 +61,7 @@ const UserProfile = () => {
         </div>
       </div>
 
-    <UserPostedJobs/>
+   
     {isOpen && <DialogueBox isOpen={isOpen} setIsOpen={setIsOpen}/>}
     </div>
   

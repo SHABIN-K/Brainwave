@@ -60,7 +60,7 @@ const UserJobListForm = ({ user }) => {
           toast.error(response.data);
         } else {
           toast.success("Successfully created");
-          //handleReset();
+          handleClear();
         }
       }
     } catch (error) {
@@ -69,6 +69,15 @@ const UserJobListForm = ({ user }) => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleClear = () => {
+    setDesc("");
+    setTitle("");
+    setSalary("");
+    setEducation("");
+    setApplyEmail("");
+    setApplyInstruction("");
   };
 
   return (
