@@ -43,10 +43,10 @@ export async function GET() {
           price_data: {
             currency: "INR",
             product_data: {
-              name: "Wall-E Pro",
+              name: "Toss.ai Pro",
               description: "Unlimited AI Generations"
             },
-            unit_amount: 2000,
+            unit_amount: 5000,
             recurring: {
               interval: "month"
             }
