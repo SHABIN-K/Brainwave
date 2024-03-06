@@ -1,6 +1,10 @@
+@config '../tailwind.config.js'
+@import 'tailwindcss/base';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 html,
 body,
