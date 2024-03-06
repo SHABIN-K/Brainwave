@@ -4,7 +4,6 @@ import plugin from "tailwindcss/plugin";
 
 module.exports = {
   content: [
-    "./components/landing/**/*.{ts,tsx}",
     "./app/(landing)/**/*.{ts,tsx}",
   ],
   theme: {
