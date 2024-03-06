@@ -1,7 +1,8 @@
 import React from "react";
 import Section from "./Section";
-import { socials } from "../../constants";
+
 import Image from "next/image";
+import { socials } from "@/constants";
 
 const Footer = () => {
   return (

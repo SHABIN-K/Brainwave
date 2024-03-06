@@ -1,5 +1,6 @@
+import { companyLogos } from "@/constants";
 import Image from "next/image";
-import { companyLogos } from "../../constants";
+
 
 const CompanyLogos = ({ className }) => {
   return (

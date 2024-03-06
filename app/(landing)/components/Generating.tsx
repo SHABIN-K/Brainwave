@@ -1,5 +1,6 @@
+import { loading } from "@/public/assets";
 import Image from "next/image";
-import { loading } from "../../public/assets";
+
 
 const Generating = ({ className }) => {
   return (
