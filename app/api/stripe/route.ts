@@ -43,10 +43,10 @@ export async function GET() {
           price_data: {
             currency: "INR",
             product_data: {
-              name: "Toss.ai Pro",
+              name: "Brainwave Pro",
               description: "Unlimited AI Generations"
             },
-            unit_amount: 5000,
+            unit_amount: 10000,
             recurring: {
               interval: "month"
             }

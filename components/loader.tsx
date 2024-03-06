@@ -11,7 +11,7 @@ export const Loader = () => {
         />
       </div>
       <p className="text-sm text-muted-foreground">
-        Toss.ai is thinking...
+        Brainwave is thinking...
       </p>
     </div>
   );
