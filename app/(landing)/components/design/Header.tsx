@@ -1,5 +1,6 @@
+import { background } from "@/public/assets";
 import Image from "next/image";
-import { background } from "../../../public/assets";
+
 
 export const Rings = () => {
   return (

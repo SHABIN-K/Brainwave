@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
 interface ButtonSvgProps {
-  white: boolean;
+  white?: boolean;
 }
 
 const ButtonSvg: FC<ButtonSvgProps> = ({ white }) => (

@@ -1,17 +1,17 @@
-import { useLocation } from "react-router-dom";
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-
 import Button from "./Button";
-import { HamburgerMenu } from "./design/Header";
-import { useState } from "react";
-import Image from "next/image";
-import { brainwave } from "@/public/assets";
 import { navigation } from "@/constants";
+import { brainwave } from "@/public/assets";
+import { HamburgerMenu } from "./design/Header";
 import MenuSvg from "@/public/assets/svg/MenuSvg";
 
 const Header = () => {
-  const pathname = useLocation();
+  const pathname = usePathname();
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -56,7 +56,7 @@ const Header = () => {
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                  item.url === pathname.hash
+                  item.url === pathname
                     ? "z-2 lg:text-n-1"
                     : "lg:text-n-1/50"
                 } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
