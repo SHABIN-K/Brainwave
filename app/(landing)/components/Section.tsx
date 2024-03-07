@@ -1,13 +1,14 @@
+import SectionSvg from "@/public/assets/svg/SectionSvg";
 import React, { FC } from "react";
-import SectionSvg from "../../public/assets/svg/SectionSvg";
+
 
 interface SectionProps {
-  className: string;
-  id: string;
-  crosses: boolean;
-  crossesOffset: string;
-  customPaddings: string;
-  children: React.ReactNode;
+  className?: string;
+  id?: string;
+  crosses?: boolean;
+  crossesOffset?: string;
+  customPaddings?: string;
+  children?: React.ReactNode;
 }
 
 const Section: FC<SectionProps> = ({

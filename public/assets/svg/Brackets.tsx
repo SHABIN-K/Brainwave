@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
 interface BracketsProps {
-  position: string;
+  position?: "left" | "right"; 
 }
-
 const Brackets: FC<BracketsProps> = ({ position }) => {
   return position === "left" ? (
     <svg

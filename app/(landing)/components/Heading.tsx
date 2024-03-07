@@ -1,6 +1,13 @@
-import TagLine from "./Tagline";
+import TagLine from "./Tagline"; // Assuming Tagline is a TypeScript component
 
-const Heading = ({ className, title, text, tag }) => {
+interface HeadingProps {
+  className?: string;
+  title?: string;
+  text?: string;
+  tag?: string;
+}
+
+const Heading: React.FC<HeadingProps> = ({ className, title, text, tag }) => {
   return (
     <div
       className={`${className} max-w-[50rem] mx-auto mb-12 lg:mb-20 md:text-center`}

@@ -1,9 +1,9 @@
-import Section from "./Section";
-import { smallSphere, stars } from "../assets";
-import Heading from "./Heading";
-import PricingList from "./PricingList.tsx";
-import { LeftLine, RightLine } from "./design/Pricing";
 import Image from "next/image";
+import Section from "./Section";
+import Heading from "./Heading";
+import PricingList from "./PricingList";
+import { smallSphere, stars } from "@/public/assets";
+import { LeftLine, RightLine } from "./design/Pricing";
 
 const Pricing = () => {
   return (

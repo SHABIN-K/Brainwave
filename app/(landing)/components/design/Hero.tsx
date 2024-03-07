@@ -1,7 +1,6 @@
+import PlusSvg from "@/public/assets/svg/PlusSvg";
 import React, { FC, useState, useEffect } from "react";
 import { MouseParallax } from "react-just-parallax";
-
-import PlusSvg from "../../../public/assets/svg/PlusSvg";
 
 export const Gradient = () => {
   return (

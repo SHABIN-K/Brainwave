@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { lines } from "../../../public/assets";
+import { lines } from "@/public/assets";
 
 export const LeftLine = () => {
   return (

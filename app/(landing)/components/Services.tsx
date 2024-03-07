@@ -1,7 +1,5 @@
 import Section from "./Section";
 import Heading from "./Heading";
-import { service1, service2, service3, check } from "../../public/assets";
-import { brainwaveServices, brainwaveServicesIcons } from "../../constants";
 import {
   PhotoChatMessage,
   Gradient,
@@ -11,6 +9,8 @@ import {
 
 import Generating from "./Generating";
 import Image from "next/image";
+import { check, service1, service2, service3 } from "@/public/assets";
+import { brainwaveServices, brainwaveServicesIcons } from "@/constants";
 
 const Services = () => {
   return (

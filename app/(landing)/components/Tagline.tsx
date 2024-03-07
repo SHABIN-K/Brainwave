@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import brackets from "../../public/assets/svg/Brackets";
+import brackets from "@/public/assets/svg/Brackets";
 
 interface TagLineProps {
   className?: string;

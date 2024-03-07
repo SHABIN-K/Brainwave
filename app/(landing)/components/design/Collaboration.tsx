@@ -1,5 +1,6 @@
+import { curve1, curve2 } from "@/public/assets";
 import Image from "next/image";
-import { curve1, curve2 } from "../../../public/assets";
+
 
 export const RightCurve = () => {
   return (
