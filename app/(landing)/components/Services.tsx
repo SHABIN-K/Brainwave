@@ -1,14 +1,14 @@
-import Section from "./Section";
-import Heading from "./Heading";
+import Image from "next/image";
+
 import {
   PhotoChatMessage,
   Gradient,
   VideoBar,
   VideoChatMessage,
 } from "./design/Services";
-
+import Section from "./Section";
+import Heading from "./Heading";
 import Generating from "./Generating";
-import Image from "next/image";
 import { check, service1, service2, service3 } from "@/public/assets";
 import { brainwaveServices, brainwaveServicesIcons } from "@/constants";
 

@@ -1,13 +1,14 @@
+import { useRef } from "react";
+import Image from "next/image";
+import { ScrollParallax } from "react-just-parallax";
+
 import Button from "./Button";
 import Section from "./Section";
-import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
 import Generating from "./Generating";
+import { heroIcons } from "@/constants";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
-import Image from "next/image";
 import { curve, heroBackground, robot } from "@/public/assets";
-import { heroIcons } from "@/constants";
 import BackgroundCircles, { BottomLine, Gradient } from "./design/Hero";
 
 const Hero = () => {

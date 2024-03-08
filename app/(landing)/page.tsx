@@ -1,13 +1,13 @@
 "use client";
 
-import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Benefits from "./components/Benefits";
-import Collaboration from "./components/Collaboration";
-import Services from "./components/Services";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
-import Footer from "./components/Footer";
+import Benefits from "./components/Benefits";
+import Services from "./components/Services";
+import Collaboration from "./components/Collaboration";
 import ButtonGradient from "@/public/assets/svg/ButtonGradient";
 
 const LandingPage = () => {

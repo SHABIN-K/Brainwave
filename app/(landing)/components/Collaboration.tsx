@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import Button from "./Button";
 import Section from "./Section";
+import { brainwaveSymbol, check } from "@/public/assets";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
 import { collabApps, collabContent, collabText } from "@/constants";
-import { brainwaveSymbol, check } from "@/public/assets";
 
 const Collaboration = () => {
   return (

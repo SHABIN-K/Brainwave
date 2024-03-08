@@ -1,5 +1,5 @@
-import ButtonSvg from "@/public/assets/svg/ButtonSvg";
 import React from "react";
+import ButtonSvg from "@/public/assets/svg/ButtonSvg";
 
 interface ButtonProps {
   className?: string;

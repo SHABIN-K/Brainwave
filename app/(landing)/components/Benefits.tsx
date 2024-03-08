@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import { benefits } from "@/constants";
 import Heading from "./Heading";
 import Section from "./Section";
-import { GradientLight } from "./design/Benefits";
+import { benefits } from "@/constants";
 import Arrow from "@/public/assets/svg/Arrow";
+import { GradientLight } from "./design/Benefits";
 import ClipPath from "@/public/assets/svg/ClipPath";
 
 const Benefits = () => {
