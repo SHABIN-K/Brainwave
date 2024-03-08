@@ -70,7 +70,7 @@ const Header = () => {
         </nav>
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
           <Button className="hidden lg:flex">
-            Sign in
+            {isSignedIn ? "Get Started" : "Sign in"}
           </Button>
         </Link>
 
