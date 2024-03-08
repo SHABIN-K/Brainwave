@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useAuth } from "@clerk/nextjs";
 
 import Button from "./Button";
 import Section from "./Section";
@@ -7,6 +8,7 @@ import { LeftCurve, RightCurve } from "./design/Collaboration";
 import { collabApps, collabContent, collabText } from "@/constants";
 
 const Collaboration = () => {
+  const { isSignedIn } = useAuth();
   return (
     <Section crosses>
       <div className="container lg:flex">
@@ -29,7 +31,7 @@ const Collaboration = () => {
             ))}
           </ul>
 
-          <Button>Try it now</Button>
+          <Button href={isSignedIn ? "/dashboard" : "/sign-up"}>Try it now</Button>
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">

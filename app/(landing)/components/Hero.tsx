@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
+import { useAuth } from "@clerk/nextjs";
 import { ScrollParallax } from "react-just-parallax";
 
 import Button from "./Button";
@@ -12,6 +14,7 @@ import { curve, heroBackground, robot } from "@/public/assets";
 import BackgroundCircles, { BottomLine, Gradient } from "./design/Hero";
 
 const Hero = () => {
+  const { isSignedIn } = useAuth();
   const parallaxRef = useRef(null);
 
   return (
@@ -24,9 +27,9 @@ const Hero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
-            Explore the Possibilities of&nbsp;AI&nbsp;Chatting with {` `}
+            Explore the Possibilities of&nbsp;AI&nbsp;Chatting with
             <span className="inline-block relative">
-              Brainwave{" "}
+              Brainwave
               <Image
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -40,9 +43,10 @@ const Hero = () => {
             Unleash the power of AI within Brainwave. Upgrade your productivity
             with Brainwave, the open AI chat app.
           </p>
-          <Button href="/pricing" white>
+          <Button href={isSignedIn ? "/dashboard" : "/sign-up"} white>
             Get started
           </Button>
+          
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
