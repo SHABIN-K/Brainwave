@@ -12,6 +12,9 @@ Unlock Limitless Creativity:🥳
 
 Embark on a journey where your digital canvas knows no bounds. Welcome to BrainWave – where innovation meets imagination. Ready to create?
 
+![image](https://github.com/SHABIN-K/Brainwave/assets/73272797/18a20bc7-e3c0-4d7a-9e41-507d16bee66c)
+
+
 ## Features 🌟
 
 - **Tailwind Design:** Stylish UI with Tailwind CSS.
@@ -92,6 +95,9 @@ From your command line:
 ````
 
 ## Support 💬
+- **🎨 Full Brainwave Design:** [ui8.net/brainwave](https://ui8.net/ui8/products/brainwave-ai-landing-page-kit)
+- **🎨 Other UI8 Designs:** https://www.ui8.net
+  
 Join Our [Telegram Group](https://www.telegram.dog/codexbotzsupport) For Support/Assistance And Our [Channel](https://www.telegram.dog/codexbotz) For Updates.   
    
 Report Bugs, Give Feature Requests There..   
