@@ -36,25 +36,28 @@ A full stack web application that makes studying easier for students and documen
 
 To run this project, you will need to add the following environment variables to your .env file:
 
-* `NEXTAUTH_URL `:The public URL of your NextAuth authentication service.
-* `NEXTAUTH_URL_INTERNAL` :The internal URL used for authentication within the project.
-* `NEXTAUTH_SECRET `:A secret key for securing sessions and tokens in NextAuth.  
-* `NEXT_SHARP_PATH`:Path for Next.js image processing with Sharp.
-* `NEXT_DEFAULT_PASSWORD`:Default password used during project setup or user creation.
-* `NEXT_PUBLIC_APP_URL`:The public URL of your application.
-* `DATABASE_URL `:Your MongoDB connection URL.
-* `EDGE_STORE_ACCESS_KEY`:Access key for Edge Store,  
-* `EDGE_STORE_SECRET_KEY`:Secret key for Edge Store
+* `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY `:Your Clerk public key. This identifies your Clerk project to the client-side of your application.
+* `CLERK_SECRET_KEY` :Your Clerk secret key (keep confidential!). This is used by the server-side of your application to talk securely with Clerk's API.
+- `NEXT_PUBLIC_CLERK_SIGN_IN_URL`: Path for user sign-in (`/sign-in`).
+- `NEXT_PUBLIC_CLERK_SIGN_UP_URL`: Path for user sign-up (`/sign-up`).
+- `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`: Redirect URL after user sign-in (`/dashboard`).
+- `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL`: Redirect URL after user sign-up (`/dashboard`).
+* `OPENAI_API_KEY `: Your OpenAI API Key (for interacting with OpenAI services)
+* `REPLICATE_API_TOKEN`:Your Replicate API Token (for interacting with Replicate services)
+- `DATABASE_URL`: Your MongoDB connection URL.
+- `STRIPE_API_KEY`: Public key for your Stripe application.
+- `STRIPE_WEBHOOK_SECRET`: Your Stripe webhook secret.
+- `NEXT_PUBLIC_APP_URL`: Application URL, e.g., "http://localhost:3000".
  
 ### How To Use 🚀
 From your command line:
 
 ```bash
 # Clone this repository
-  $git clone https://github.com/your_github_name/studydrive.git
+  $git clone https://github.com/your_github_name/brainwave.git
 
 # Go into the repository
-  $cd studydrive
+  $cd brainwave
 
 # Install dependencies
   $npm install
