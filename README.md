@@ -1,26 +1,47 @@
-# StudyDrive 📚
-A full stack web application that makes studying easier for students and document management hassle-free for teachers. **Students can easily find study materials sorted by subjects and courses, while teachers can upload, organize, and manage resources effortlessly**. StudyHub encourages teamwork, makes study materials easy to access, and acts as a hub for all educational resources 🚀
+# Welcome to BrainWave: Elevate Your Digital Canvas!
+
+Experience the evolution of AI creativity with our cutting-edge SaaS product. We're not just a platform; we're your digital muse.
+
+Unlock Limitless Creativity:🥳
+
+* **Dynamic Chats:** Engage in intelligent conversations that adapt to your style.
+* **Code Crafting:** Instantly generate code snippets, your coding companion.
+* **Harmonious Melodies:** Let AI compose music that echoes your unique vibe.
+* **Visual Wizardry:** Transform ideas into reality with AI-powered image generation.
+* **Video Magic:** Elevate your content with seamless AI-assisted video creation.
+
+Embark on a journey where your digital canvas knows no bounds. Welcome to BrainWave – where innovation meets imagination. Ready to create?
 
 ## Features 🌟
 
-- **Lightweight:**: Crafted with minimalistic UI design.
-- **PWA:** Install as a Progressive Web App on your device.
-- **Easy Navigation:** Students can effortlessly find study materials, sorted by subjects, courses, and categories.
-- **Advanced Search:** Powerful search functionality to quickly locate specific study materials.
-- **Document Management:** Teachers can easily upload, organize, and manage a variety of educational resources.
-- **Admin Dashboard:** Admins can conveniently control and manage users and roles.
-- **Security Measures:** Ensuring secure file upload and storage..
-- **User Authentication:** Secure login for teachers and admin.
-- **Responsive Design:** User-friendly experience on various devices.
+- **Tailwind Design:** Stylish UI with Tailwind CSS.
+- **Animations and Effects:** Enhance user experience with dynamic elements.
+- **Full Responsiveness:** Optimal viewing on various devices.
+- **Clerk Authentication:** Seamless user authentication with email, Google, and 9+ social logins.
+- **Form Handling:** Client-side validation using react-hook-form and server error handling with react-toast.
+- **Image Generation:** Tool powered by Open AI.
+- **Video Generation:** Utilize Replicate AI for video content creation.
+- **Conversation Generation:** Open AI-powered tool for generating dynamic conversations.
+- **Music Generation:** Replicate AI for personalized music creation.
+- **Loading State:** Informative page loading states for a smoother user experience.
+- **Stripe Subscription:** Monthly subscription handling for financial transactions.
+- **Free Tier with API Limiting:** Provide a free tier with controlled API access.
+- **RESTful Routes:** Implementation of POST, DELETE, and GET routes in route handlers (app/api).
+- **Database Access:** Fetch data in server react components directly from the database without using APIs (like Magic!).
+- **Component Relations:** Manage relations between server and child components efficiently.
+- **Layout Reusability:** Demonstrate how to reuse layouts for consistent design.
+- **Folder Structure:** Organized folder structure in Next.js 13 App Router for clarity and scalability.
+
   
 ## Tech Stack 🛠️
 
 - **NEXT.JS:** React-based framework for building modern web applications.
 - **Tailwind CSS:** Utility-first CSS framework for highly customizable UIs.
 - **MongoDB:** NoSQL database for flexible and scalable data storage.
-- **NextAuth:** Authentication solution for Next.js with social logins and more.
+- **Clerk:** Authentication solution for Next.js with social logins and more.
 - **Prisma:** Modern database toolkit for simplified data access.
 - **Zustand:** Lightweight state management library for React.
+- **Stripe:**  Payment processing for seamless transactions in your application.
 
 ## Getting Started 🚦
 
@@ -36,14 +57,14 @@ A full stack web application that makes studying easier for students and documen
 
 To run this project, you will need to add the following environment variables to your .env file:
 
-* `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY `:Your Clerk public key. This identifies your Clerk project to the client-side of your application.
-* `CLERK_SECRET_KEY` :Your Clerk secret key (keep confidential!). This is used by the server-side of your application to talk securely with Clerk's API.
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY `:Your Clerk public key. This identifies your Clerk project to the client-side of your application.
+- `CLERK_SECRET_KEY` :Your Clerk secret key.This is used by the server-side of your application to talk securely with Clerk's API.
 - `NEXT_PUBLIC_CLERK_SIGN_IN_URL`: Path for user sign-in (`/sign-in`).
 - `NEXT_PUBLIC_CLERK_SIGN_UP_URL`: Path for user sign-up (`/sign-up`).
 - `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`: Redirect URL after user sign-in (`/dashboard`).
 - `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL`: Redirect URL after user sign-up (`/dashboard`).
-* `OPENAI_API_KEY `: Your OpenAI API Key (for interacting with OpenAI services)
-* `REPLICATE_API_TOKEN`:Your Replicate API Token (for interacting with Replicate services)
+- `OPENAI_API_KEY `: Your OpenAI API Key (for interacting with OpenAI services)
+- `REPLICATE_API_TOKEN`:Your Replicate API Token (for interacting with Replicate services)
 - `DATABASE_URL`: Your MongoDB connection URL.
 - `STRIPE_API_KEY`: Public key for your Stripe application.
 - `STRIPE_WEBHOOK_SECRET`: Your Stripe webhook secret.
