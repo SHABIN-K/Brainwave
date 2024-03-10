@@ -96,7 +96,6 @@ From your command line:
 
 ## Support 💬
 - **🎨 Full Brainwave Design:** [ui8.net/brainwave](https://ui8.net/ui8/products/brainwave-ai-landing-page-kit)
-- **🎨 Other UI8 Designs:** https://www.ui8.net
   
 Join Our [Telegram Group](https://www.telegram.dog/codexbotzsupport) For Support/Assistance And Our [Channel](https://www.telegram.dog/codexbotz) For Updates.   
    
