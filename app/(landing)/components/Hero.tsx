@@ -9,7 +9,6 @@ import Section from "./Section";
 import Generating from "./Generating";
 import { heroIcons } from "@/constants";
 import Notification from "./Notification";
-import CompanyLogos from "./CompanyLogos";
 import { curve, heroBackground, robot } from "@/public/assets";
 import BackgroundCircles, { BottomLine, Gradient } from "./design/Hero";
 
@@ -97,8 +96,6 @@ const Hero = () => {
 
           <BackgroundCircles parallaxRef={parallaxRef} />
         </div>
-
-        <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
       </div>
 
       <BottomLine />
